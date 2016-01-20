@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/alert_confirm_prompt.css" rel="stylesheet" />
+    <link href="css/icon.css" rel="stylesheet" />
+</head>
+<body>
+    <a href="javascript:openAlertMaskLayer('我就路过提示下');">这是个普通的提示</a>
+
+    <input type="button" value="confirmtest" id="0"/>
+    <input type="button" value="confirmtest" id="1"/>
+
+    <a href="javascript:openPromptMaskLayer('你想输入啥啊', function(value){ alert('你输入了'+value);});">请输入哈哈哈</a>
+    <div class="page"></div>
+
+
+    <div class="mask-wrapper">
+        <div class="mask"></div>
+        <div class="close">
+            <span class="icon-sprite icon-closemask"></span>
+        </div>
+        <div class="option-bar">
+            <span class="icon-sprite icon-exportbtn"></span>
+        </div>
+        <div class="content">
+            <div class="iframe-content">
+                <div class="normal-popup">
+                    <h2>编辑项目<span class="icon-sprite icon-blueCross"></span></h2>
+                    <div class="normal-popup-content">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--这里是通用提示框位置-->
+    <div class="tips-information-wrapper">
+        <div class="tips-information-content">
+            这里是注释注释注释
+        </div>
+        <span class="arrow-wrapper"></span>
+        <span class="arrow"></span>
+    </div>
+    <!--这里是通用遮罩层位置-->
+</body>
+<script src="js/jquery-1.9.0.min.js"></script>
+<script src="js/alert_confirm_prompt.js"></script>
+<script>
+    $(function () {
+        $("body").on("click", "input[type=button]", function () {
+            var thisObj = $(this);
+            openConfirmMaskLayer('你好你好你好妞儿', function () { deleteOne(thisObj.attr("id"));}, function () { });
+        });
+        initialMyDropDown();
+        /*setTimeout(function () {
+            var htmlstring='<div class="one-line">\
+                                上级指标：\
+                                <!--自定义下拉面板 begin-->\
+                                <div class="mydropdown-wrapper">\
+                                    <h5 class="dropdown-label" data-value="0" style="width:155px;">\
+                                        <span class="choosetext">按天统计</span>\
+                                        <span class="icon-sprite icon-greenarrowdown"></span>\
+                                    </h5>\
+                                    <div class="dropdown-pannel">\
+                                        <ul class="dropdown-list">\
+                                            <li><a data-value="0">按天统计</a></li>\
+                                            <li><a data-value="1">按周统计</a></li>\
+                                            <li><a data-value="2">按月统计</a></li>\
+                                            <li><a data-value="3">按季度统计</a></li>\
+                                        </ul>\
+                                    </div>\
+                                </div>\
+                                <!--自定义下拉面板 end-->\
+                            </div>\
+                            <div class="one-line">\
+                                指标名称：\
+                                <input type="text" class="normal-ipt"/>\
+                            </div>\
+                            <div class="normal-popup-alert">\
+                                <a class="normal-btn deepgreen-btn alert-confirm">确认</a>\
+                                <a class="normal-btn deepgreen-btn alert-cancel">取消</a>\
+                            </div>';
+            openInsidePageMaskLayer("编辑项目", htmlstring);
+            initialMyDropDown();
+        }, 2000);*/
+        generatePager({ "allCount": 32, "page": 0, "allPage": 16 });
+    });
+    function deleteOne(id) {
+        alert("delete"+id);
+    }
+    function ajax_getPage(page) {
+        generatePager({ "allCount": 32, "page": page, "allPage": 16 });
+    }
+</script>
+</html>

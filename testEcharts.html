@@ -1,0 +1,469 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title> 
+    <link href="css/Common.css" rel="stylesheet" />
+</head>
+<body>
+    你好世界
+    <progress id="W3Cfuns_progress" max="100"></progress>
+    <meter min="0" max="100" low="60" high="90" optimum="100" value="91">91分</meter>
+    <div id="Echarts" class="Echarts-wrapper" >
+
+    </div>
+    <div id="baifenbi" style="width:100%;height:400px;display:inline-block;">
+
+    </div>
+    <div id="Echart_2" style="width:30%;height:300px;display:inline-block;background-color:#ededed !important;">
+
+    </div>
+    <div id="Echart_3" style="width:30%;height:300px;display:inline-block;">
+
+    </div>
+</body>
+<script type="text/javascript" data-main="js/requireJs-main" src="js/require-original.js"></script>
+<!--按照说明引入，可能有更好的引入方式，这里从百度cdn引入-->
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script type="text/javascript">
+    var myChart;
+    var chartArray = new Array();
+    var option = {
+        tooltip: {
+            show: true
+        },
+        legend: {
+            data: ['销量', '呵呵']
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: ["不高兴T恤", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                "name": "销量",
+                "type": "bar",
+                "data": [5, 20, 40, 10, 10, 20]
+            },
+            {
+                "name": "呵呵",
+                "type": "line",
+                "data": [5, 20, 40, 10, 10, 20]
+            }
+        ],
+        color: ["#8AC007", "#ccc"],
+        //renderAsImage:true
+        toolbox: {
+            show: true,
+            feature: {
+                mark: { show: true },
+                dataView: { show: true, readOnly: false },
+                magicType: { show: true, type: ['line', 'bar'] },
+                restore: { show: true },
+                saveAsImage: { show: true }
+            }
+        },
+
+        grid: {
+            backgroundColor: "#ddd",
+        },
+    };
+    // 路径配置
+    require.config({
+        paths: {
+            echarts: 'http://echarts.baidu.com/build/dist'
+        }
+    });
+
+    // 使用
+    require(
+        [
+            'echarts',
+            'echarts/chart/bar', // 使用柱状图就加载bar模块，按需加载
+            'echarts/chart/line',
+            'echarts/chart/pie',
+            'echarts/chart/funnel',
+            'echarts/chart/radar'
+        ],
+        function (ec) {
+            // 基于准备好的dom，初始化echarts图表
+            myChart = ec.init(document.getElementById('Echarts'));
+            chartArray[0] = ec.init(document.getElementById('baifenbi'));
+            chartArray[1] = ec.init($("#Echart_2")[0]);
+            chartArray[2] = ec.init($("#Echart_3")[0]);
+
+            
+
+            myChart.showLoading({
+                text: '正在努力的读取数据中...',    //loading话术
+            });
+            setTimeout(function () {
+                myChart.hideLoading();
+            }, 3000);
+            // 为echarts对象加载数据 
+            myChart.setOption(option);
+            myChart.setTheme("macarons");
+
+            var labelTop = {
+                normal: {
+                    label: {
+                        show: true,
+                        position: 'center',
+                        formatter: '{b}',
+                        textStyle: {
+                            baseline: 'bottom'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    }
+                }
+            };
+            var labelFromatter = {
+                normal: {
+                    label: {
+                        formatter: function (params) {
+                            return 100 - params.value + '%'
+                        },
+                        textStyle: {
+                            baseline: 'top'
+                        }
+                    }
+                },
+            }
+            var labelBottom = {
+                normal: {
+                    color: '#ccc',
+                    label: {
+                        show: true,
+                        position: 'center'
+                    },
+                    labelLine: {
+                        show: false
+                    }
+                },
+                emphasis: {
+                    color: 'green'
+                }
+            };
+            var radius = [40, 55];
+            var option_0 = {
+                legend: {
+                    x: 'center',
+                    y: 'center',
+                    data: [
+                        'GoogleMaps', 'Facebook', 'Youtube', 'Google+', 'Weixin'
+                    ]
+                },
+                title: {
+                    text: 'The App World',
+                    subtext: 'from global web index',
+                    x: 'center'
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataView: { show: true, readOnly: false },
+                        magicType: {
+                            show: true,
+                            type: ['pie', 'funnel'],
+                            option: {
+                                funnel: {
+                                    width: '20%',
+                                    height: '30%',
+                                    itemStyle: {
+                                        normal: {
+                                            label: {
+                                                formatter: function (params) {
+                                                    return 'other\n' + params.value + '%\n'
+                                                },
+                                                textStyle: {
+                                                    baseline: 'middle'
+                                                }
+                                            }
+                                        },
+                                    }
+                                }
+                            }
+                        },
+                        restore: { show: true },
+                        saveAsImage: { show: true }
+                    }
+                },
+                series: [
+                    {
+                        type: 'pie',
+                        center: ['10%', '30%'],
+                        radius: radius,
+                        x: '0%', // for funnel
+                        itemStyle: labelFromatter,
+                        data: [
+                            { name: 'other', value: 46, itemStyle: labelBottom },
+                            { name: 'GoogleMaps', value: 54, itemStyle: labelTop }
+                        ]
+                    },
+                    {
+                        type: 'pie',
+                        center: ['30%', '30%'],
+                        radius: radius,
+                        x: '20%', // for funnel
+                        itemStyle: labelFromatter,
+                        data: [
+                            { name: 'other', value: 56, itemStyle: labelBottom },
+                            { name: 'Facebook', value: 44, itemStyle: labelTop }
+                        ]
+                    },
+                    {
+                        type: 'pie',
+                        center: ['50%', '30%'],
+                        radius: radius,
+                        x: '40%', // for funnel
+                        itemStyle: labelFromatter,
+                        data: [
+                            { name: 'other', value: 65, itemStyle: labelBottom },
+                            { name: 'Youtube', value: 35, itemStyle: labelTop }
+                        ]
+                    },
+                    {
+                        type: 'pie',
+                        center: ['70%', '30%'],
+                        radius: radius,
+                        x: '60%', // for funnel
+                        itemStyle: labelFromatter,
+                        data: [
+                            { name: 'other', value: 70, itemStyle: labelBottom },
+                            { name: 'Google+', value: 30, itemStyle: labelTop }
+                        ]
+                    },
+                    {
+                        type: 'pie',
+                        center: ['90%', '30%'],
+                        radius: radius,
+                        x: '80%', // for funnel
+                        itemStyle: labelFromatter,
+                        data: [
+                            { name: 'other', value: 73, itemStyle: labelBottom },
+                            { name: 'Weixin', value: 27, itemStyle: labelTop }
+                        ]
+                    }
+                ],
+                color: [ "green"],
+            };
+            var option_1 = {
+                title: {
+                    text: '预算 vs 开销（Budget vs spending）',
+                    subtext: '纯属虚构'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'right',
+                    y: 'bottom',
+                    data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: { show: true },
+                        dataView: { show: true, readOnly: false },
+                        restore: { show: true },
+                        saveAsImage: { show: true }
+                    }
+                },
+                polar: [
+                   {
+                       indicator: [
+                           { text: '销售（sales）', max: 6000 },
+                           { text: '管理（Administration）', max: 16000 },
+                           { text: '信息技术（Information Techology）', max: 30000 },
+                           { text: '客服（Customer Support）', max: 38000 },
+                           { text: '研发（Development）', max: 52000 },
+                           { text: '市场（Marketing）', max: 25000 }
+                       ]
+                   }
+                ],
+                calculable: true,
+                series: [
+                    {
+                        name: '预算 vs 开销（Budget vs spending）',
+                        type: 'radar',
+                        data: [
+                            {
+                                value: [4300, 10000, 28000, 35000, 50000, 19000],
+                                name: '预算分配（Allocated Budget）'
+                            },
+                             {
+                                 value: [5000, 14000, 28000, 31000, 42000, 21000],
+                                 name: '实际开销（Actual Spending）'
+                             }
+                        ]
+                    }
+                ]
+            };
+
+            chartArray[0].setOption(option_0);
+            chartArray[1].showLoading({
+                text: '正在努力的读取数据中...',    //loading话术
+            });
+            setTimeout(function () {
+                chartArray[1].setOption(option_1);
+
+                chartArray[1].hideLoading();
+            }, 3000);
+            initial_3();
+        }
+    );
+
+    //option 和setoption应该可以放在外面
+    function testOutside() {
+        var option = {
+            
+            series: [
+                {
+                    "name": "销量",
+                    "type": "bar",
+                    "data": [15, 13, 1, 2, 4, 6]
+                },
+                {
+                    "name": "呵呵",
+                    "type": "line",
+                    "data": [12, 33, 2, 24, 33, 15]
+                }
+            ]
+        };
+        myChart.setOption(option);
+    }
+    function initial_3() {
+        var dataStyle = {
+            normal: {
+                label: { show: false },
+                labelLine: { show: false }
+            }
+        };
+        var placeHolderStyle = {
+            normal: {
+                color: 'rgba(0,0,0,0)',
+                label: { show: false },
+                labelLine: { show: false }
+            },
+            emphasis: {
+                color: 'rgba(0,0,0,0)'
+            }
+        };
+        var option = {
+            title: {
+                text: '你幸福吗？',
+                subtext: 'From ExcelHome',
+                sublink: 'http://e.weibo.com/1341556070/AhQXtjbqh',
+                x: 'center',
+                y: 'center',
+                itemGap: 20,
+                textStyle: {
+                    color: 'rgba(30,144,255,0.8)',
+                    fontFamily: '微软雅黑',
+                    fontSize: 35,
+                    fontWeight: 'bolder'
+                }
+            },
+            tooltip: {
+                show: true,
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                x: document.getElementById('Echart_3').offsetWidth / 2,
+                y: 45,
+                itemGap: 12,
+                data: ['68%的人表示过的不错', '29%的人表示生活压力很大', '3%的人表示“我姓曾”']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    mark: { show: true },
+                    dataView: { show: true, readOnly: false },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            grid: {
+                backgroundColor:"#ddd",
+            },
+            series: [
+                {
+                    name: '1',
+                    type: 'pie',
+                    clockWise: false,
+                    radius: [125, 150],
+                    itemStyle: dataStyle,
+                    data: [
+                        {
+                            value: 68,
+                            name: '68%的人表示过的不错'
+                        },
+                        {
+                            value: 32,
+                            name: 'invisible',
+                            itemStyle: placeHolderStyle
+                        }
+                    ]
+                },
+                {
+                    name: '2',
+                    type: 'pie',
+                    clockWise: false,
+                    radius: [100, 125],
+                    itemStyle: dataStyle,
+                    data: [
+                        {
+                            value: 29,
+                            name: '29%的人表示生活压力很大'
+                        },
+                        {
+                            value: 71,
+                            name: 'invisible',
+                            itemStyle: placeHolderStyle
+                        }
+                    ]
+                },
+                {
+                    name: '3',
+                    type: 'pie',
+                    clockWise: false,
+                    radius: [75, 100],
+                    itemStyle: dataStyle,
+                    data: [
+                        {
+                            value: 3,
+                            name: '3%的人表示“我姓曾”'
+                        },
+                        {
+                            value: 97,
+                            name: 'invisible',
+                            itemStyle: placeHolderStyle
+                        }
+                    ]
+                }
+            ]
+        };
+        
+        chartArray[2].showLoading({
+            text: '正在努力的读取数据中...',    //loading话术
+        });
+        setTimeout(function () {
+            chartArray[2].setOption(option);
+
+            chartArray[2].hideLoading();
+        }, 3000);
+    }
+</script>
+</html>
+

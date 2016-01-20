@@ -1,0 +1,120 @@
+﻿div.wechat-commonPlugin-mask {
+    background-color:rgba(92, 92, 92, 0.50);
+    width:100%;
+    height:100%;
+
+    position:fixed;
+
+    display:none;
+}
+/*******************************底部selectlist********************************************/
+div.wechat-commonPlugin-bottomSelectList {
+    background-color:#fff;
+
+    position:absolute;
+    bottom:0px;
+    width:100%;
+
+    display:none;
+}
+
+    div.wechat-commonPlugin-bottomSelectList ul.wechat-commonPlugin-bottomSelectList-select {
+
+    }
+    div.wechat-commonPlugin-bottomSelectList ul.wechat-commonPlugin-bottomSelectList-select li a{
+        display:block;
+        border-top:1px solid #dddddd;
+        color:#333333;
+        text-decoration:none;
+        padding:15px 20px;
+    }
+    div.wechat-commonPlugin-bottomSelectList ul.wechat-commonPlugin-bottomSelectList-select li a.acquiescent{
+        color:#6699cc;
+    }
+
+    div.wechat-commonPlugin-bottomSelectList div.wechat-commonPlugin-bottomSelectList-title {
+        text-align:center;
+        padding:15px 10px;
+    }
+    div.wechat-commonPlugin-bottomSelectList div.wechat-commonPlugin-splitBar {
+        background-color: #eeeeee;
+        height: 15px;
+        border-top: 1px solid #dddddd;
+    }
+    div.wechat-commonPlugin-bottomSelectList div.wechat-commonPlugin-bottomSelectList-cancel {
+        text-align:center;
+        padding:15px 10px;
+    }
+
+/**********************************中间弹出无遮罩层alert******************************************************/
+div.wechat-commonPlugin-alert {
+    position:fixed;
+    width:200px;
+    left:0px;
+    right:0px;
+    margin:auto;
+
+    top:200px;
+    padding:10px;
+    text-align:center;
+    border-radius:5px;
+    box-shadow:1px 1px 5px #B2B2B2;
+
+    background-color:rgba(0, 0, 0, 0.50);
+    color:#fff;
+    font-family:'Microsoft YaHei';
+
+}
+/***********************************confirm弹框******************************************************************/
+div.wechat-commonPlugin-confirmLike {
+    background-color:#fff;
+    
+    width:250px;
+    position:absolute;
+    left:0px;
+    right:0px;
+    margin:auto;
+    border-radius:2px;
+    box-shadow:1px 1px 5px #838383;
+
+    top:150px;
+}
+div.wechat-commonPlugin-confirmLike .wechat-commonPlugin-confirmLike-content{
+    padding:10px;
+    border-bottom:1px solid #dddddd;
+}
+div.wechat-commonPlugin-confirmLike .wechat-commonPlugin-confirmLike-content .wechat-commonPlugin-confirm-title{
+    margin-top:15px;
+    text-align:center;
+    font-size:16px;
+    color:#333333;
+
+}
+.tips {
+    font-family:'Microsoft YaHei';
+    font-size:13px;
+    color:#bbb;
+}
+div.wechat-commonPlugin-confirmLike .wechat-commonPlugin-confirmLike-content .wechat-commonPlugin-confirm-detail {
+    margin:5px 0px 10px 0px;
+    text-align:center;
+}
+div.wechat-commonPlugin-confirmLike .wechat-commonPlugin-confirmLike-options {
+    font-size:0px;
+}
+div.wechat-commonPlugin-confirmLike .wechat-commonPlugin-confirmLike-options a{
+    display:inline-block;
+    width:50%;
+    font-size:16px;
+    text-align:center;
+    padding:10px 5px;
+    box-sizing:border-box;
+    text-decoration:none;
+    color:#333333;
+}
+div.wechat-commonPlugin-confirmLike .wechat-commonPlugin-confirmLike-options a:hover{
+    background-color:#eeeeee;
+}
+div.wechat-commonPlugin-confirmLike .wechat-commonPlugin-confirmLike-options a.left-opt{
+    border-right:1px solid #dddddd;
+}

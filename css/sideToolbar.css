@@ -1,0 +1,76 @@
+﻿body {
+    margin:0px;
+}
+* {
+    font-family:'Microsoft YaHei';
+    font-size:15px;
+}
+
+/*侧边目录栏样式粗略*/
+div.sideToolbar {
+    width:260px;
+    position:fixed;
+    top:300px;
+    right:10px;
+}
+.gray-square-btn {
+    display:inline-block;
+    font-size:20px;
+    padding:15px;
+    background-color:#ccc;
+    color:white;
+}
+a.gray-square-btn.block {
+    display:block;
+    width:70px;
+    box-sizing:border-box;
+    margin-bottom:10px;
+}
+div.sideToolbar div.sidebar {
+    position:absolute;
+    width:2px;
+    height:300px;
+    background-color:#ccc;
+    left:5px;
+    bottom:145px;
+}
+    div.sideToolbar div.sidebar span {
+        font-size:20px;
+        display:inline-block;
+        color:#adadad;
+        font-weight:bold;
+        text-shadow:0px 0px 5px #fff;
+        position:absolute;
+        left:-5px;
+        top:-20px;
+    }
+        div.sideToolbar div.sidebar span:last-child {
+            top:288px;
+        }
+div.sideToolbar div.catalog {
+    position:relative;
+    top:-100px;
+}
+    div.sideToolbar div.catalog dl {
+        position:relative;
+        margin:0px;
+        padding:0px 0px 0px 30px;
+    }
+        div.sideToolbar div.catalog dl dt {
+            font-size:20px;
+            font-weight:bold;
+            color:#333;
+            margin-bottom:10px;
+        }
+        div.sideToolbar div.catalog dl a > span {
+            position:absolute;
+            left:1px;
+            color:#ccc;
+            display:inline-block;
+            margin-top:5px;
+        }
+            div.sideToolbar div.catalog dl a > span.nowAt {
+                color:#58b8e9;
+                text-shadow:0px 0px 5px #58b8e9;
+            }
+/*侧边目录栏样式粗略*/

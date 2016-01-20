@@ -1,0 +1,232 @@
+﻿@CHARSET "UTF-8";
+div.survey-wrapper {
+    width:75%;
+}
+    div.survey-wrapper div.survey-header {
+        background-color:#fff;
+        border:1px solid #ddd;
+    }
+
+    div.survey-wrapper div.survey-header h2{
+        font-size:18px;
+        padding:15px 0px;
+        text-align:center;
+        border-bottom:1px solid #ddd;
+    }
+            div.survey-wrapper div.survey-header > div {
+                padding:20px;
+            }
+    div.survey-wrapper div.survey-header > div h5{
+        font-size:14px;
+        color:#999999;
+        margin-bottom:10px;
+    }
+div.survey-wrapper textarea.normal-txa {
+    width:98%;
+    padding:6px 1%;
+    border:1px solid #ddd;
+    font-size:16px;
+    font-family:'Microsoft YaHei';
+    outline:none;
+    resize:none;
+    overflow:hidden;
+}
+    div.survey-wrapper div.survey-question-wrapper {
+
+    }
+    div.survey-wrapper div.survey-question-wrapper div.no-question{
+        margin:30px 0px;
+        width:100%;
+    }
+    div.survey-wrapper div.survey-question-wrapper div.no-question img{
+        width:100%;
+    }
+
+        div.survey-wrapper div.survey-question-wrapper div.have-question {
+        }
+
+    div.survey-wrapper div.survey-footer {
+        background-color:#fff;
+        border:1px solid #ddd;
+        padding:20px;
+        margin-bottom:30px;
+    }
+    div.survey-wrapper div.survey-footer h5{
+        margin-bottom:10px;
+        font-size:14px;
+        color:#999999;
+    }
+/*******************************************************************/
+div.survey-question-list {
+    width:220px;
+    position:fixed;
+    background-color:#fff;
+    border:1px solid #ddd;
+    /*要计算**/
+    right:0px;
+    top:0px;
+
+    padding:20px 15px;
+    color:#3d5273;
+}
+    div.survey-question-list > h2 {
+        font-size:20px;
+    }
+    div.survey-question-list > h2>a {
+        font-size:14px;
+        color:#999999;
+        padding-top: 6px;
+    }
+    div.survey-question-list >ul>li> h3 {
+        position:relative;
+        padding:20px 0px 15px 25px;
+    }
+    /***未展开▶***********/
+    div.survey-question-list >ul>li> h3:before {
+        content: "";
+        display: inline-block;
+        background-image: url('../images/bg_icon.png');
+        background-position: -360px -60px;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 16px;
+        left: -8px;
+    }
+    /***展开之后▼*/
+    div.survey-question-list >ul>li> h3.spread:before {
+        background-position: -180px -60px;
+    }
+    /*没有子元素*/
+    div.survey-question-list >ul>li> h3.noChildren:before {
+        background-position: 0px 0px;
+    }
+
+    div.survey-question-list > ul > li > ul > li > h4 {
+        position:relative;
+        padding:0px 0px 10px 40px;
+        font-size:14px;
+        color:#999999;
+    }
+    div.survey-question-list > ul > li > ul > li > h4 span.icon-sprite{
+        position:absolute;
+        left: 12px;
+        top: -5px;
+    }
+    div.survey-question-list > ul > li > ul > li > div.one-question {
+        position:absolute;
+        width:720px;
+        /*为了动画和存储内容*/
+        left:0px;
+        display:none;
+    }
+/*******************************************************************/
+div.survey-optionbar {
+    width:100%;
+    position:fixed;
+    background-color:#fff;
+    border:1px solid #ddd;
+    /*要计算**/
+    right:0px;
+    bottom:0px;
+    text-align:right;
+}
+    div.survey-optionbar a.medium-btn {
+        padding:10px 35px;
+        margin:10px 15px 10px 0px;
+    }
+
+/***********************问题公用***********************************/
+div.one-question {
+    background-color:#fff;
+    border:1px solid #ddd;
+    padding:20px;
+    margin:15px 0px;
+    position:relative;
+}
+    div.one-question > h5 {
+        position:relative
+    }
+    div.one-question > h5 span.question-no{
+        padding-right:20px;
+        margin-right:20px;
+        border-right:1px solid #ddd;
+    }
+    div.one-question > h5 span.icon-sprite {
+        position:absolute;
+    }
+    div.one-question > h5>span.icon-sprite {
+        left: 55px;
+        top: -4px;
+    }
+        div.one-question > h5 span.question-type {
+            padding-left:20px;
+        }
+        div.one-question > h5 span.question-necessary div.radio-group {
+            display:inline-block;
+        }
+            div.one-question > h5 span.question-necessary div.radio-group > span {
+                position:relative;
+            }
+            div.one-question > h5 span.question-necessary div.radio-group > span {
+                position:relative;
+                padding-left:20px;
+            }
+            div.one-question > h5 span.question-necessary div.radio-group > span span.icon-sprite{
+                position:absolute;
+                left: -6px;
+                top: -3px;
+            }
+
+    div.one-question div.question {
+        margin:20px 0px 0px 60px;
+    }
+    div.one-question div.question h5{
+        margin-bottom:10px;
+    }
+    div.one-question div.question p.one-choice{
+        position:relative;
+        padding: 0px 0px 10px 30px;
+    }
+    div.one-question div.question p.one-choice span.icon-sprite{
+        position:absolute;
+        left: -5px;
+        top: -3px;
+    }
+        div.one-question div.question div.one-choice {
+            position:relative;
+        }
+        div.one-question div.question div.one-choice>span {
+            position:absolute;
+            left: 0px;
+            top: 5px;
+        }
+        div.one-question div.question ul.level-list {
+            font-size:0px;
+            margin:0px 0px 0px 150px;
+            display:inline-block;
+        }
+        div.one-question div.question ul.level-list li{
+            display:inline-block;
+        }
+        div.one-question div.question ul.level-list li span.icon-sprite{
+            display:block;
+            margin-right:5px;
+        }
+        div.one-question div.question > input[type=text] {
+            width:98%;
+            padding:6px 1%;
+            border:1px solid #ddd;
+            font-size:16px;
+            font-family:'Microsoft YaHei';
+            outline:none;
+            margin:5px 0px;
+        }
+    div.one-question div.question-optionbar {
+        position:absolute;
+        left:20px;
+        bottom:20px;
+    }
+        div.one-question div.question-optionbar span.icon-sprite {
+            display:block;
+        }

@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="test_wechat_JsLibrary.appcache">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/wechat_commonPlugin.css" rel="stylesheet" />
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <!--只针对手机你懂得-->
+    
+
+    <script src="js/jquery-1.9.0.min.js"></script>
+    <script src="js/wechat_commonPlugin.js"></script>
+    <script src="js/operate_cookie.js"></script>
+    <script src="js/IndexedDB.js"></script>
+    <script type="text/javascript">
+        setTimeout(function () {
+            //$.selectlist_wxl();
+            //$.alert_wxl();
+            //$.confirm_wxl({ "confirm_title": "我特么为什么要留着", "confirm_detail": "我不会留在这里陪你们玩哒~因为没我卵事", "on_left": function () { alert("左边"); }, "on_right": function () { alert("右边");}});
+            //放在后面执行不影响其执行上前面的执行
+            console.log(new Date());
+        }, 2000);
+
+        //这边开始进行cookie 试验田
+        //$.cookie因为还要额外引入一个文件所以直接用js对cookie进行操作
+        //啊……反正都要写还是写了个文件（扶额
+        //setCookie("whoishandsome","吴晓璐","d30");
+        alert(getCookie("whoishandsome"));
+        //delCookie("whoishandsome");
+
+        //这边开始 web SQL试验田 天哪 其实前端能做到的技术已经到如此地步 这是在浏览器客户端 创建一个本地的数据库 类似于app应用
+        //创建名为mydatabase的库
+        var db = openDatabase('mydb', '2.0', 'Test DB', 2 * 1024 * 1024);
+        db.transaction(function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (5, "id不同新增，修改换sql语句")');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (6, "刷新后数据库仍然保留，get到了很厉害的技能")');
+        });
+
+        db.transaction(function (tx) {
+            tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+                //var len = results.rows.length, i;
+                //msg = "<p>Found rows: " + len + "</p>";
+                //document.querySelector('#status').innerHTML += msg;
+                //for (i = 0; i < len; i++) {
+                //    msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
+                //    document.querySelector('#status').innerHTML += msg;
+                //}
+                console.log(results);
+                //只能拿到key 不能拿到value foreach
+                for (var item in results.rows) {
+                    console.log(results.rows[item].log);
+                }
+            }, null);
+        });
+
+
+        //在HTML5本地存储——Web SQL Database提到过Web SQL Database实际上已经被废弃，而HTML5的支持的本地存储实际上变成了Web Storage（Local Storage和Session Storage）与IndexedDB
+        //没错上面白干了QAQ 老娘也不是什么善茬子 你还真以为老娘踏踏实实给你干活啊 看什么看 滚犊子
+        //下面是IndexedDB地 试验田
+        /*
+        Web SQL Database和Indexed Database都是在客户端存储大量结构化数据的解决方案。
+        Web SQL Database 实现了传统的基于SQL语句的数据库操作，而Indexed Database实现了NoSQL的存储方式
+
+        I已经被广泛的实现在了不同的浏览器里，尤其是手机端浏览器
+
+        现Indexed DB API。由于在手机等移动设备的浏览器中都没有实现Indexed DB API，所以其还有一定的局限性
+        */
+
+        //数据库对象
+        var myDB = {
+            //名称
+            name: 'test',
+            //版本
+            version: 3,
+            //创建时会给他赋值
+            db: null
+        };
+
+        //objectstore?一张表？
+        var students = [{
+            id: 1001,
+            name: "Byron",
+            age: 24
+        }, {
+            id: 1002,
+            name: "Frank",
+            age: 30
+        }, {
+            id: 1003,
+            name: "Aaron",
+            age: 26
+        }];
+
+        //打开数据库 如果没有 那么创建
+        openDB(myDB.name, myDB.version);
+
+        //增加数据
+        setTimeout(function () {
+            addData(myDB.db, 'students',students);
+        }, 1000);
+
+
+        //localstorage和sessionstorage 的试验田
+        /*
+        ocalStorage - 没有时间限制的数据存储
+        sessionStorage - 针对一个 session 的数据存储
+        sessionStorage 方法针对一个 session 进行数据存储。当用户关闭浏览器窗口后，数据会被删除。
+        */
+        if (!window.localStorage.view_time)
+            window.localStorage.view_time = "0";
+        
+        var temp = parseInt(window.localStorage.view_time);
+        console.log(++temp);
+        window.localStorage.view_time = temp.toString();
+
+        if (!sessionStorage.stay_time)
+            sessionStorage.stay_time = "0";
+
+        var ticks = parseInt(sessionStorage.stay_time);
+        setInterval(function () {
+            ticks++;
+            window.sessionStorage.stay_time = ticks.toString();
+        }, 1000);
+        //window.onbeforeunload = function (event) {
+        //    return confirm("已经停留"+ticks+"秒，确定离开此页面吗？");
+        //}
+
+
+        /*
+        web worker试验田
+        chrome真是好用的浏览器啊 TAT要是所有人都用chrome浏览器多好
+
+        Web Workers 和 DOM
+        由于 web worker 位于外部文件中，它们无法访问下例 JavaScript 对象：
+        window 对象
+        document 对象
+        parent 对象
+
+        所以吧不知道尼玛有什么卵用
+        一个特别大的需要在外面运行的js
+        唉暂时还是知道就行
+        */
+    </script>
+</body>
+</html>

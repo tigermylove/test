@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/color.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/content.css" rel="stylesheet" />
+    <link href="css/icon.css" rel="stylesheet" />
+    <link href="css/surveyAddEdit.css" rel="stylesheet" />
+</head>
+<body class="bg-efefefdeepGray">
+    <div id="wrapper" class="page-wrapper">
+
+        <div id="page-wrapper" class="content-wrapper">
+            <div class="row">
+                <div id="main" class="col-lg-12 main">
+
+                    <!-- nav -->
+                    <div class="breadcrumb">
+                        <span>
+                            <a href="">
+                                <span class="icon-sprite icon-home"></span>
+                            </a>
+                            您的位置:
+                        </span>
+                        <span>
+                            <a href="/admin/satisfy/index.htm">满意度调查
+                            </a>
+                            &gt;
+                        </span>
+                        <span>问卷管理
+                        </span>
+                    </div>
+
+                    <!--内容部分begin-->
+                    <div class="survey-wrapper">
+				<div class="survey-header">
+					<h2>问卷标题问卷标题</h2>
+					<div>
+						<h5>问卷前言：</h5>
+						<textarea class="normal-txa" placeholder="欢迎参加本次答题！"></textarea>
+					</div>
+				</div>
+				<div class="survey-question-wrapper">
+					<!--如果没有添加问题-->
+					<div class="no-question">
+						<img src="${path}back/images/new_version/w_03.png"/>
+					</div>
+					<!--如果没有添加问题-->
+					<div class="have-question">
+						<div data-id="0" class="one-question type1">
+							<h5>
+								<span class="question-no">Q1</span>
+								<span class="icon-sprite icon-type1_question"></span>
+								<span class="question-type">单选题</span>
+								<span class="question-necessary float-right">
+									<div class="radio-group">
+										<span><span class="icon-sprite icon-tinyRadioChecked"></span>必答</span>
+										<span><span class="icon-sprite icon-tinyRadioUnchecked"></span>选答</span>
+									</div>
+								</span>
+							</h5>
+							<div class="question">
+								<h5>题目名字题目名字</h5>
+								<p class="one-choice">
+					                <span class="icon-sprite icon-tinyRadioChecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyRadioUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyRadioUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyRadioUnchecked"></span>
+					                选项一
+					            </p>
+							</div>
+							<div class="question-optionbar">
+								<span class="icon-sprite icon-movemoreUp" title="上移题目"></span>
+								<span class="icon-sprite icon-movemoreDown" title="下移题目"></span>
+								<span class="icon-sprite icon-moveOut" title="移除题目"></span>
+							</div>
+						</div>
+						<div data-id="1" class="one-question type2">
+						<h5>
+								<span class="question-no">Q2</span>
+								<span class="icon-sprite icon-type2_question"></span>
+								<span class="question-type">多选题</span>
+								<span class="question-necessary float-right">
+									<div class="radio-group">
+										<span><span class="icon-sprite icon-tinyRadioChecked"></span>必答</span>
+										<span><span class="icon-sprite icon-tinyRadioUnchecked"></span>选答</span>
+									</div>
+								</span>
+							</h5>
+							<div class="question">
+								<h5>题目名字题目名字</h5>
+								<p class="one-choice">
+					                <span class="icon-sprite icon-tinyCheckboxUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyCheckboxUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyCheckboxUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyCheckboxChecked"></span>
+					                选项一
+					            </p>
+							</div>
+							<div class="question-optionbar">
+								<span class="icon-sprite icon-movemoreUp" title="上移题目"></span>
+								<span class="icon-sprite icon-movemoreDown" title="下移题目"></span>
+								<span class="icon-sprite icon-moveOut" title="移除题目"></span>
+							</div>
+						</div>
+						<div data-id="2" class="one-question type3">
+						<h5>
+								<span class="question-no">Q3</span>
+								<span class="icon-sprite icon-type3_question"></span>
+								<span class="question-type">评分题</span>
+								<span class="question-necessary float-right">
+									<div class="radio-group">
+										<span><span class="icon-sprite icon-tinyRadioChecked"></span>必答</span>
+										<span><span class="icon-sprite icon-tinyRadioUnchecked"></span>选答</span>
+									</div>
+								</span>
+							</h5>
+							<div class="question">
+								<h5>题目名字题目名字</h5>
+								
+					            <div class="one-choice">
+					            	<span>满意度</span>
+						            <ul class="level-list">
+						                <li><span class="icon-sprite icon-starlighton"></span></li>
+						                <li><span class="icon-sprite icon-starlighton"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						            </ul>
+					            </div>
+					            <div class="one-choice">
+					            	<span>满意度</span>
+						            <ul class="level-list">
+						                <li><span class="icon-sprite icon-starlighton"></span></li>
+						                <li><span class="icon-sprite icon-starlighton"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						            </ul>
+					            </div>
+							</div>
+							<div class="question-optionbar">
+								<span class="icon-sprite icon-movemoreUp" title="上移题目"></span>
+								<span class="icon-sprite icon-movemoreDown" title="下移题目"></span>
+								<span class="icon-sprite icon-moveOut" title="移除题目"></span>
+							</div>
+						</div>
+						<div data-id="3" class="one-question type4">
+						<h5>
+								<span class="question-no">Q4</span>
+								<span class="icon-sprite icon-type4_question"></span>
+								<span class="question-type">填空题</span>
+								<span class="question-necessary float-right">
+									<div class="radio-group">
+										<span><span class="icon-sprite icon-tinyRadioChecked"></span>必答</span>
+										<span><span class="icon-sprite icon-tinyRadioUnchecked"></span>选答</span>
+									</div>
+								</span>
+							</h5>
+							<div class="question">
+								<h5>题目名字题目名字</h5>
+					            <input type="text"> 
+							</div>
+							<div class="question-optionbar">
+								<span class="icon-sprite icon-movemoreUp" title="上移题目"></span>
+								<span class="icon-sprite icon-movemoreDown" title="下移题目"></span>
+								<span class="icon-sprite icon-moveOut" title="移除题目"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="survey-footer">
+					<h5>用户提交问卷后的结束语：</h5>
+					<textarea class="normal-txa" placeholder="您已完成本次问卷，感谢您的帮助与支持！"></textarea>
+				</div>
+			</div>
+			<div class="survey-question-list">
+				<h2>问题库<a class="float-right" href="">管理</a></h2>
+				<ul>
+					<li>
+						<h3>类别一</h3>
+						<ul>
+							<li>
+								<h4>
+									<span class="icon-sprite icon-type1_question"></span>
+									<span class="question-title">题目名称题目名称</span>
+								</h4>
+								<div data-id="4" class="one-question type1">
+							<h5>
+								<span class="question-no">Q1</span>
+								<span class="icon-sprite icon-type1_question"></span>
+								<span class="question-type">单选题</span>
+								<span class="question-necessary float-right">
+									<div class="radio-group">
+										<span><span class="icon-sprite icon-tinyRadioChecked"></span>必答</span>
+										<span><span class="icon-sprite icon-tinyRadioUnchecked"></span>选答</span>
+									</div>
+								</span>
+							</h5>
+							<div class="question">
+								<h5>题目名字题目名字</h5>
+								<p class="one-choice">
+					                <span class="icon-sprite icon-tinyRadioChecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyRadioUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyRadioUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyRadioUnchecked"></span>
+					                选项一
+					            </p>
+							</div>
+							<div class="question-optionbar">
+								<span class="icon-sprite icon-movemoreUp" title="上移题目"></span>
+								<span class="icon-sprite icon-movemoreDown" title="下移题目"></span>
+								<span class="icon-sprite icon-moveOut" title="移除题目"></span>
+							</div>
+						</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h3>类别二</h3>
+						<ul>
+							<li>
+								<h4>
+									<span class="icon-sprite icon-type2_question"></span>
+									<span class="question-title">题目名称题目名称</span>
+								</h4>
+								<div data-id="5" class="one-question type2">
+						<h5>
+								<span class="question-no">Q2</span>
+								<span class="icon-sprite icon-type2_question"></span>
+								<span class="question-type">多选题</span>
+								<span class="question-necessary float-right">
+									<div class="radio-group">
+										<span><span class="icon-sprite icon-tinyRadioChecked"></span>必答</span>
+										<span><span class="icon-sprite icon-tinyRadioUnchecked"></span>选答</span>
+									</div>
+								</span>
+							</h5>
+							<div class="question">
+								<h5>题目名字题目名字</h5>
+								<p class="one-choice">
+					                <span class="icon-sprite icon-tinyCheckboxUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyCheckboxUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyCheckboxUnchecked"></span>
+					                选项一
+					            </p>
+					            <p class="one-choice">
+					                <span class="icon-sprite icon-tinyCheckboxChecked"></span>
+					                选项一
+					            </p>
+							</div>
+							<div class="question-optionbar">
+								<span class="icon-sprite icon-movemoreUp" title="上移题目"></span>
+								<span class="icon-sprite icon-movemoreDown" title="下移题目"></span>
+								<span class="icon-sprite icon-moveOut" title="移除题目"></span>
+							</div>
+						</div>
+							</li>
+							<li>
+								<h4>
+									<span class="icon-sprite icon-type3_question"></span>
+									<span class="question-title">题目名称题目名称</span>
+								</h4>
+								<div data-id="6" class="one-question type3">
+						<h5>
+								<span class="question-no">Q3</span>
+								<span class="icon-sprite icon-type3_question"></span>
+								<span class="question-type">评分题</span>
+								<span class="question-necessary float-right">
+									<div class="radio-group">
+										<span><span class="icon-sprite icon-tinyRadioChecked"></span>必答</span>
+										<span><span class="icon-sprite icon-tinyRadioUnchecked"></span>选答</span>
+									</div>
+								</span>
+							</h5>
+							<div class="question">
+								<h5>题目名字题目名字</h5>
+								
+					            <div class="one-choice">
+					            	<span>满意度</span>
+						            <ul class="level-list">
+						                <li><span class="icon-sprite icon-starlighton"></span></li>
+						                <li><span class="icon-sprite icon-starlighton"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						            </ul>
+					            </div>
+					            <div class="one-choice">
+					            	<span>满意度</span>
+						            <ul class="level-list">
+						                <li><span class="icon-sprite icon-starlighton"></span></li>
+						                <li><span class="icon-sprite icon-starlighton"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						                <li><span class="icon-sprite icon-starlightoff"></span></li>
+						            </ul>
+					            </div>
+							</div>
+							<div class="question-optionbar">
+								<span class="icon-sprite icon-movemoreUp" title="上移题目"></span>
+								<span class="icon-sprite icon-movemoreDown" title="下移题目"></span>
+								<span class="icon-sprite icon-moveOut" title="移除题目"></span>
+							</div>
+						</div>
+							</li>
+							<li>
+								<h4>
+									<span class="icon-sprite icon-type4_question"></span>
+									<span class="question-title">题目名称题目名称</span>
+								</h4>
+								<div data-id="7" class="one-question type4">
+						<h5>
+								<span class="question-no">Q4</span>
+								<span class="icon-sprite icon-type4_question"></span>
+								<span class="question-type">填空题</span>
+								<span class="question-necessary float-right">
+									<div class="radio-group">
+										<span><span class="icon-sprite icon-tinyRadioChecked"></span>必答</span>
+										<span><span class="icon-sprite icon-tinyRadioUnchecked"></span>选答</span>
+									</div>
+								</span>
+							</h5>
+							<div class="question">
+								<h5>题目名字题目名字</h5>
+					            <input type="text"> 
+							</div>
+							<div class="question-optionbar">
+								<span class="icon-sprite icon-movemoreUp" title="上移题目"></span>
+								<span class="icon-sprite icon-movemoreDown" title="下移题目"></span>
+								<span class="icon-sprite icon-moveOut" title="移除题目"></span>
+							</div>
+						</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+			</div>
+            <div class="survey-optionbar">
+            	<a class="medium-btn deepgreen-btn left-icon"><span class="icon-sprite icon-whitesave"></span>保&nbsp存</a>
+            	<a class="medium-btn white-btn left-icon"><span class="icon-sprite icon-littlegreencross"></span>取&nbsp消</a>
+            </div>
+                    <!--内容部分end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.9.0.min.js"></script>
+<script src="js/surveyAddEdit.js"></script>
+<script>
+    $(function () {
+        initialQuestionChooser();
+    });
+</script>
+</html>

@@ -1,0 +1,417 @@
+.icon-sprite{
+    display:inline-block;
+    background-image:url('../images/bg_icon.png');
+}
+.icon-rank {
+    background-position:-60px -60px;
+    width:30px;
+    height:30px;
+}
+.icon-rank-reverse {
+    background-position:-90px -60px;
+    width:30px;
+    height:30px;
+}
+.icon-sample {
+    background-position:-60px -90px;
+    width:30px;
+    height:30px;
+}
+.icon-sample-reverse {
+    background-position:-90px -90px;
+    width:30px;
+    height:30px;
+}
+.icon-pie {
+    background-position:-60px -120px;
+    width:30px;
+    height:30px;
+}
+.icon-pie-reverse {
+    background-position:-90px -120px;
+    width:30px;
+    height:30px;
+}
+
+
+.icon-note {
+    background-position:-60px -150px;
+    width:30px;
+    height:30px;
+}
+.icon-note-reverse {
+    background-position:-90px -150px;
+    width:30px;
+    height:30px;
+}.icon-setting {
+    background-position:-60px -180px;
+    width:30px;
+    height:30px;
+}
+.icon-setting-reverse {
+    background-position:-90px -180px;
+    width:30px;
+    height:30px;
+}
+.icon-chat {
+    background-position:-60px -210px;
+    width:30px;
+    height:30px;
+}
+.icon-chat-reverse {
+    background-position:-90px -210px;
+    width:30px;
+    height:30px;
+}
+.icon-write {
+    background-position:-60px -240px;
+    width:30px;
+    height:30px;
+}
+.icon-write-reverse {
+    background-position:-90px -240px;
+    width:30px;
+    height:30px;
+}.icon-notebook {
+    background-position:-60px -270px;
+    width:30px;
+    height:30px;
+}
+.icon-notebook-reverse {
+    background-position:-90px -270px;
+    width:30px;
+    height:30px;
+}.icon-menu {
+    background-position:-60px -300px;
+    width:30px;
+    height:30px;
+}
+.icon-menu-reverse {
+    background-position:-90px -300px;
+    width:30px;
+    height:30px;
+}
+
+
+.icon-user {
+    background-position:-150px -150px;
+    width:30px;
+    height:30px;
+}
+.icon-passwordlock {
+    background-position:-150px -180px;
+    width:30px;
+    height:30px;
+}
+.icon-checked {
+    background-position:-150px -210px;
+    width:30px;
+    height:30px;
+}
+.icon-unchecked {
+    background-position:-150px -240px;
+    width:30px;
+    height:30px;
+}
+.icon-warning {
+    background-position:-180px -240px;
+    width:30px;
+    height:30px;
+}
+.icon-analysis {
+    background-position:-240px -60px;
+    width:30px;
+    height:30px;
+}
+.icon-dotmenu {
+    background-position:-270px -60px;
+    width:30px;
+    height:30px;
+}
+.icon-bluearrowdown {
+    background-position:-300px -60px;
+    width:30px;
+    height:30px;
+}
+.icon-bluearrowup {
+    background-position:-330px -60px;
+    width:30px;
+    height:30px;
+}
+.icon-greenarrowdown {
+    background-position:-180px -60px;
+    width:30px;
+    height:30px;
+}
+.reverse .icon-greenarrowdown {
+    background-position:-450px -60px;
+    width:30px;
+    height:30px;
+}
+.icon-greenarrowup {
+    background-position:-210px -60px;
+    width:30px;
+    height:30px;
+}
+.reverse .icon-greenarrowup {
+    background-position:-390px -60px;
+    width:30px;
+    height:30px;
+}
+.icon-download {
+    background-position:-360px -90px;
+    width:30px;
+    height:30px;
+}
+.icon-home {
+    background-position:-150px -60px;
+    width:30px;
+    height:30px;
+}
+.icon-smsresearch {
+    background-position:-240px -90px;
+    width:30px;
+    height:30px;
+}
+.icon-paperresearch {
+    background-position:-270px -90px;
+    width:30px;
+    height:30px;
+}
+.icon-floatresearch {
+    background-position:-300px -90px;
+    width:30px;
+    height:30px;
+}
+.icon-departmentresearch {
+    background-position:-330px -90px;
+    width:30px;
+    height:30px;
+}
+.icon-analysis-reverse {
+    background-position:-150px -120px;
+    width:30px;
+    height:30px;
+}
+.icon-return {
+    background-position:-420px -90px;
+    width:30px;
+    height:30px;
+}
+.icon-export {
+    background-position:-390px -90px;
+    width:30px;
+    height:30px;
+}
+.icon-search {
+    background-position:-180px -120px;
+    width:30px;
+    height:30px;
+}
+
+.icon-homy {
+    background-position:-150px -270px;
+    width:30px;
+    height:30px;
+}
+.icon-homy-reverse {
+    background-position: -180px -270px;
+    width: 30px;
+    height: 30px;
+}
+.icon-channel {
+    background-position:-150px -300px;
+    width:30px;
+    height:30px;
+}
+.icon-channel-reverse {
+    background-position: -180px -300px;
+    width: 30px;
+    height: 30px;
+}
+.icon-notess {
+    background-position:-150px -330px;
+    width:30px;
+    height:30px;
+}
+.icon-notess-reverse {
+    background-position: -180px -330px;
+    width: 30px;
+    height: 30px;
+}
+.icon-message {
+    background-position:-150px -360px;
+    width:30px;
+    height:30px;
+}
+.icon-message-reverse {
+    background-position: -180px -360px;
+    width: 30px;
+    height: 30px;
+}
+.icon-single {
+    background-position:-150px -390px;
+    width:30px;
+    height:30px;
+}
+.icon-single-reverse {
+    background-position: -180px -390px;
+    width: 30px;
+    height: 30px;
+}
+.icon-lock {
+    background-position:-150px -420px;
+    width:30px;
+    height:30px;
+}
+.icon-lock-reverse {
+    background-position: -180px -420px;
+    width: 30px;
+    height: 30px;
+}
+/*多选 为了方便显示起的数字名字*/
+.icon-type2_question {
+    background-position: -240px -390px;
+    width: 30px;
+    height: 30px;
+}
+/*单选 为了方便显示起的数字名字*/
+.icon-type1_question {
+    background-position: -270px -390px;
+    width: 30px;
+    height: 30px;
+}
+/*填空 为了方便显示起的数字名字*/
+.icon-type4_question {
+    background-position: -300px -390px;
+    width: 30px;
+    height: 30px;
+}
+/*评分 为了方便显示起的数字名字*/
+.icon-type3_question {
+    background-position: -330px -390px;
+    width: 30px;
+    height: 30px;
+}
+
+.icon-closemask {
+    background-position: -420px -60px;
+    width: 30px;
+    height: 30px;
+}
+.icon-exportbtn {
+    background-position: -420px -90px;
+    width: 30px;
+    height: 60px;
+}
+.icon-exportbtn:hover {
+    background-position: -420px -150px;
+    width: 30px;
+    height: 60px;
+}
+.icon-editrow {
+    background-position: -210px -120px;
+    width: 30px;
+    height: 30px;
+}
+.icon-deleterow {
+    background-position: -270px -120px;
+    width: 30px;
+    height: 30px;
+}
+
+.icon-addrow {
+    background-position: -300px -120px;
+    width: 30px;
+    height: 30px;
+}
+.icon-addline {
+    background-position: -240px -150px;
+    width: 30px;
+    height: 30px;
+}
+.icon-previewrow {
+    background-position: -240px -120px;
+    width: 30px;
+    height: 30px;
+}
+.icon-trashcan {
+    background-position: -240px -120px;
+    width: 30px;
+    height: 30px;
+}
+.icon-searchRight {
+    background-position: -210px -150px;
+    width: 30px;
+    height: 30px;
+}
+.icon-searchRight:hover {
+    background-position: -180px -150px;
+    width: 30px;
+    height: 30px;
+}
+.icon-blueCross {
+    background-position:-390px -270px;
+    width:30px;
+    height:30px;
+}
+.icon-tinyRadioChecked {
+    background-position:-240px -270px;
+    width:30px;
+    height:30px;
+}
+.icon-tinyRadioUnchecked {
+    background-position:-270px -270px;
+    width:30px;
+    height:30px;
+}
+.icon-tinyCheckboxChecked {
+    background-position:-240px -300px;
+    width:30px;
+    height:30px;
+}
+.icon-tinyCheckboxUnchecked {
+    background-position:-270px -300px;
+    width:30px;
+    height:30px;
+}
+.icon-starlighton {
+    background-position:-360px -390px;
+    width:30px;
+    height:30px;
+}
+.icon-starlightoff {
+    background-position:-390px -390px;
+    width:30px;
+    height:30px;
+}
+.icon-moveOut{
+	background-position:-300px -270px;
+    width:30px;
+    height:30px;
+}
+.icon-moveOut:hover{
+	background-position:-300px -300px;
+    width:30px;
+    height:30px;
+}
+.icon-movemoreUp{
+	background-position:-330px -270px;
+    width:30px;
+    height:30px;
+}
+.icon-movemoreUp:hover{
+	background-position:-330px -300px;
+    width:30px;
+    height:30px;
+}
+.icon-movemoreDown{
+	background-position:-360px -270px;
+    width:30px;
+    height:30px;
+}
+.icon-movemoreDown:hover{
+	background-position:-360px -300px;
+    width:30px;
+    height:30px;
+}

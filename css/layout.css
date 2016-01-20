@@ -1,0 +1,33 @@
+﻿.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+div.page-wrapper {
+    width: 1200px;
+    margin: 0px auto;
+}
+/*为了让伟大的页脚始终放到底下*/
+    div.page-wrapper#wrapper {
+        min-height:650px;
+    }
+
+div.content-wrapper {
+    width: 960px;
+    margin: 30px 0px 0px 240px;
+    /*为了让伟大的分页一直在内容的右下*/
+    position:relative;
+    min-height:650px;
+}
+
+div.menu-wrapper {
+    width: 210px;
+    margin: 0px 30px 0px 0px;
+}
+
+div.fill-height {
+    height:100px;
+}
