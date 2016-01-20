@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        div.top-error-information {
+            background-color:#FFFFC8;
+            color:#333;
+            padding:15px 25px 15px 15px;
+            position:fixed;
+            top:0px;
+            left:0px;
+            width:100%;
+            box-sizing:border-box;
+            box-shadow:1px 1px 5px #ccc;
+        }
+        div.top-error-information div.close-icon{
+            position:absolute;
+            right:5px;
+            top:5px;
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-error-information">
+        <div class="information">如果未找到您的报告 ，可能是由于网络原因导致延迟，请24小时候再试</div> 
+        <div class="close-icon" onclick="javascript:$(this).parent().slideUp('fast');">×</div>
+    </div>
+
+    <div style="padding:10px 15px;">此报告仅作为临床参考不具备法律效力，报告以窗口发放为准</div>
+    <script src="js/jquery-1.9.0.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+﻿/*呵呵大家都喜欢的遮罩层*/
+div.mask-wrapper {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    /*可能要计算*/
+    height:100%;
+    display:none;
+    /*overflow-y:scroll;*/
+    z-index:250;
+}
+div.mask-wrapper div.mask{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+    background-color:#000;
+}
+div.mask-wrapper div.close{
+    position:fixed;
+    right:40px;
+    top:20px;
+
+    display:none;
+}
+div.mask-wrapper div.option-bar{
+    position:fixed;
+    right: 40px;
+    top: 70px;
+
+    display:none;
+}
+div.mask-wrapper div.content{
+    position:absolute;
+    top:70px;
+    /*要计算*/
+    right:70px;
+}
+div.mask-wrapper div.content div.iframe-content{
+    
+}
+div.mask-wrapper div.content div.iframe-content div.normal-popup{
+    width: 300px;
+    min-height: 200px;
+    background-color: #fff;
+    padding: 15px;
+}
+div.mask-wrapper div.content div.iframe-content div.normal-popup h2{
+    color:#3d5273;
+    padding-bottom:15px;
+    border-bottom:1px solid #8ab833;
+    position:relative;
+}
+div.mask-wrapper div.content div.iframe-content div.normal-popup h2>span.icon-sprite{
+    position:absolute;
+    right:0px;
+    top:-5px;
+}
+div.normal-popup-alert {
+    text-align:center;
+    margin-top:35px;
+}
+div.normal-popup-alert p{
+    margin:20px 0px;
+}
+div.normal-popup-alert a.alert-cancel{
+    margin-left:20px;
+}
+div.normal-popup-alert input[type=text].prompt-textbox{
+    padding:8px 12px;
+    font-family:'Microsoft YaHei';
+    font-size:15px;
+    border:1px solid #dddddd;
+    display:block;
+    margin:35px auto;
+    width:80%;
+}
+div.mask-wrapper div.content div.iframe-content div.normal-popup div.one-line {
+    margin-top:15px;
+}
+/*呵呵大家都喜欢的遮罩层*/
+
+
+/*气泡对话框样式*/
+div.tips-information-wrapper {
+    border:1px solid #dddddd;
+    display:inline-block;
+    position:absolute;
+    font-size:0px;
+    width:230px;
+    z-index:10;
+
+    display:none;
+}
+div.tips-information-wrapper div.tips-information-content{
+    background-color:#fff;
+    color:#333333;
+    font-size:15px;
+    padding:10px;
+}
+div.tips-information-wrapper span.arrow-wrapper{
+    position:absolute;
+    border-width:15px;
+    border-style:solid;
+    border-color:transparent transparent #dddddd transparent;
+    left:115px;
+    top:-30px;
+}
+div.tips-information-wrapper span.arrow
+{
+    position:absolute;
+    border-width:15px;
+    border-style:solid;
+    border-color:transparent transparent #fff transparent;
+    left:115px;
+    top:-29px;
+}
+/*气泡对话框样式*/
+
+ /****************************按钮样式统一*********************************************************/
+a.normal-btn {
+    text-decoration:none;
+    padding:8px 20px;
+    border:1px solid;
+    display:inline-block;
+}
+a.huge-btn {
+    text-decoration:none;
+    padding:15px 30px;
+    border:1px solid;
+    display:inline-block;
+}
+a.medium-btn {
+    text-decoration:none;
+    padding:10px 15px;
+    border:1px solid;
+    display:inline-block;
+    font-size:15px;
+}
+a.left-icon {
+    padding-left:40px;
+    position:relative;
+}
+    a.medium-btn.left-icon span.icon-sprite {
+        position:absolute;
+        left:5px;
+        bottom:3px;
+    }
+a.deepgreen-btn {
+    border-color:#549e39;
+    background-color:#549e39;
+    color:white;
+}
+a.deepgray-btn {
+    border-color:#e5e5e5;
+    background-color:#e5e5e5;
+    color:#3d5273;
+}
+a.white-btn {
+    border-color:#bbbbbb;
+    background-color:#ffffff;
+    color:#3d5273;
+}
+a.whitegreen-btn {
+    border-color:#8ab833;
+    background-color:#ffffff;
+    color:#8ab833;
+}
+a.nocolor-btn {
+    border-color:transparent;
+    background-color:transparent;
+    color:#333333;
+}
+input[type=text].normal-ipt {
+    outline:none;
+    border:1px solid #bbbbbb;
+    font-size:15px;
+    font-family:'Microsoft YaHei';
+    padding: 10px 35px 10px 15px;
+    width:150px;
+}
+/***************************自定义下拉面板开始*******************************************/
+div.mydropdown-wrapper {
+    position:relative;
+    display:inline-block;
+}
+    div.mydropdown-wrapper h5 {
+        font-size:15px;
+        background-color:#ffffff;
+        border:1px solid #bbbbbb;
+        padding:10px 30px 10px 15px;
+        position:relative;
+        color:#3d5273;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+    }
+    div.mydropdown-wrapper.reverse h5 {
+        background-color:#549e39;
+        border:1px solid #bbbbbb;
+        padding:10px 30px 10px 15px;
+        position:relative;
+        color:#fff;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+    }
+        div.mydropdown-wrapper h5 span.icon-sprite {
+            position:absolute;
+            bottom:5px;
+            right:0px;
+        }
+    div.mydropdown-wrapper div.dropdown-pannel {
+        position:absolute;
+        /*min-width 计算控制吧*/
+        min-width:100%;
+        border:1px solid #bbbbbb;
+        z-index:100;
+
+        display:none;
+    }
+        div.mydropdown-wrapper div.dropdown-pannel ul.dropdown-list {
+            font-size:0px;
+        }
+            div.mydropdown-wrapper div.dropdown-pannel ul.dropdown-list > li {
+            }
+                div.mydropdown-wrapper div.dropdown-pannel ul.dropdown-list > li > a {
+                    display:block;
+                    font-size:15px;
+                    color:#000;
+                    padding:13px 30px;
+                    background-color:#ffffff;
+                    z-index:100;
+                    text-decoration:none;
+                    text-align:center;
+                    color:#bbbbbb;
+                    cursor:pointer;
+                }
+                    div.mydropdown-wrapper div.dropdown-pannel ul.dropdown-list > li > a:hover {
+                        color:#3d5273;
+                        background-color:#e9e9e9;
+                    }
+/***************************自定义下拉面板结束*******************************************/
+
+/*按钮在里面的搜索框*/
+div.search-box {
+    position:relative;
+    border: 1px solid #bbbbbb;
+    background-color:white;
+}
+    div.search-box>input[type=text] {
+        outline:none;
+        border:0px;
+        font-size:15px;
+        font-family:'Microsoft YaHei';
+        padding: 10px 35px 10px 15px;
+        width:150px;
+    }
+    div.search-box > a.search-button {
+        position:absolute;
+        right:0px;
+        top:5px;
+        cursor:pointer;
+    }
+    div.search-box > a.search-button >span.icon-sprite{
+        
+    }
+/*按钮在里面的搜索框*/
+
+
+/*控制分页样式*/
+div.page {
+    position:absolute;
+    right:0px;
+    bottom:20px;
+    font-size:0px;
+    margin-top:20px;
+}
+div.page *{
+    display:inline-block;
+}
+
+    div.page > div > span.rows {
+        font-size:15px;
+        color:#3d5273;
+        margin-right:25px;
+    }
+
+    div.page > div > span.current {
+        font-size:15px;
+        color:#ffffff;
+        padding:5px 0px;
+        width:30px;
+        text-align:center;
+        background-color:#8ab833;
+    }
+
+    div.page > div > a.num {
+        font-size:15px;
+        color:#3d5273;
+        font-size:15px;
+        padding:5px 0px;
+        width:30px;
+        text-align:center;
+        /*background-color:#8ab833;*/
+    }
+    /*本身不显示字号0，用after替换，替身大法*/
+    div.page > div > a.next {
+        text-decoration:none;
+    }
+    div.page > div > a.next:after {
+        content:"替";
+        font-size:15px;
+        color:transparent;
+        padding:5px 0px;
+        width:30px;
+        text-align:center;
+        background-color:transparent;
+        background-image:url('../images/bg_icon.png');
+        background-position:-390px -120px;
+        width:30px;
+
+        display:inline-block;
+        text-decoration:none;
+    }
+    div.page > div > a.next.disabled:after {
+    	background-position:-390px -180px;
+    }
+    div.page > div > a.previous {
+        text-decoration:none;
+    }
+    div.page > div > a.previous:after {
+        content:"替";
+        font-size:15px;
+        color:transparent;
+        padding:5px 0px;
+        width:30px;
+        text-align:center;
+        background-color:transparent;
+        background-image:url('../images/bg_icon.png');
+        background-position:-360px -150px;
+        width:30px;
+
+        display:inline-block;
+        text-decoration:none;
+    }
+    div.page > div > a.previous.disabled:after{
+    	background-position:-360px -120px;
+    }
+    div.page > div > a.home-page {
+        text-decoration:none;
+    }
+    div.page > div > a.home-page:after {
+        content:"替";
+        font-size:15px;
+        color:transparent;
+        padding:5px 0px;
+        width:50px;
+        text-align:center;
+        background-color:transparent;
+        background-image:url('../images/bg_icon.png');
+        background-position:-510px -120px;
+        width:50px;
+
+        display:inline-block;
+        text-decoration:none;
+        margin:0px 15px;
+    }
+    div.page > div > a.end-page {
+        text-decoration:none;
+    }
+    div.page > div > a.end-page:after {
+        content:"替";
+        font-size:15px;
+        color:transparent;
+        padding:5px 0px;
+        width:50px;
+        text-align:center;
+        background-color:transparent;
+        background-image:url('../images/bg_icon.png');
+        background-position:-510px -180px;
+        width:50px;
+
+        display:inline-block;
+        text-decoration:none;
+        margin:0px 15px;
+    }
+    div.page > div >div.input-copyist{
+    	background-color:#fff;
+    	border:1px solid #8ab833;
+    	padding:4px 0px;
+    }
+    div.page > div >div.input-copyist input[type=text]{
+    	outline:none;
+    	border:0px;
+    	background-color:transparent;
+    	width:30px;
+    	text-align:center;
+    	padding:0px;
+    	margin:0px;
+    	font-size: 15px;
+    	font-family:'Microsoft Yahei';
+    }
+/*控制分页样式*/

@@ -1,0 +1,795 @@
+div.time-chooser {
+    background-color:#efefef;
+    padding:10px;
+    margin-bottom:20px;
+    font-size:0px;
+}
+    div.time-chooser div.mydropdown-wrapper {
+        min-width: 150px;
+        margin-right:10px;
+    }
+        div.time-chooser a.medium-btn {
+            margin-right:10px;
+        }
+            div.time-chooser a.medium-btn.left-icon {
+                margin-right:0px;
+            }
+    div.time-chooser div.button-group {
+        display:inline-block;
+    }
+/***************************自定义下拉面板开始*******************************************/
+div.mydropdown-wrapper {
+    position:relative;
+    display:inline-block;
+}
+    div.mydropdown-wrapper h5 {
+        font-size:15px;
+        background-color:#ffffff;
+        border:1px solid #bbbbbb;
+        padding:10px 30px 10px 15px;
+        position:relative;
+        color:#3d5273;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+    }
+    div.mydropdown-wrapper.reverse h5 {
+        background-color:#549e39;
+        border:1px solid #bbbbbb;
+        padding:10px 30px 10px 15px;
+        position:relative;
+        color:#fff;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+    }
+        div.mydropdown-wrapper h5 span.icon-sprite {
+            position:absolute;
+            bottom:5px;
+            right:0px;
+        }
+    div.mydropdown-wrapper div.dropdown-pannel {
+        position:absolute;
+        /*min-width 计算控制吧*/
+        min-width:100%;
+        border:1px solid #bbbbbb;
+        z-index:100;
+
+        display:none;
+    }
+        div.mydropdown-wrapper div.dropdown-pannel ul.dropdown-list {
+            font-size:0px;
+        }
+            div.mydropdown-wrapper div.dropdown-pannel ul.dropdown-list > li {
+            }
+                div.mydropdown-wrapper div.dropdown-pannel ul.dropdown-list > li > a {
+                    display:block;
+                    font-size:15px;
+                    color:#000;
+                    padding:13px 30px;
+                    background-color:#ffffff;
+                    z-index:100;
+                    text-decoration:none;
+                    text-align:center;
+                    color:#bbbbbb;
+                    cursor:pointer;
+                }
+                    div.mydropdown-wrapper div.dropdown-pannel ul.dropdown-list > li > a:hover {
+                        color:#3d5273;
+                        background-color:#e9e9e9;
+                    }
+/***************************自定义下拉面板结束*******************************************/
+
+/**********************************************************************/
+div.full-echart-wrapper {
+    width:100%;
+    height:400px;
+}
+div.full-echart-wrapper.short {
+    height:250px;
+}
+div.half-echart-wrapper {
+    width:49%;
+    height:400px;
+    display:inline-block;
+}
+    div.half-echart-wrapper:first-of-type {
+        margin-right:2%;
+    }
+    div.half-echart-wrapper:first-child {
+        margin-right:2%;
+    }
+/*********************************************************************/
+div.echarts-tooltip {
+    /*这个必须要重新设置，否则继承字体0不显示tooltip tooltip仍然是html元素而非canvas*/
+    font-size:15px;
+}
+/************table样式统一********************************************************/
+table {
+    font-size:15px;
+    color:#3d5273;
+    text-align:center;
+}
+    table.datatable {
+        width:100%;
+        border:1px solid #dddddd;
+        margin:20px 0px;
+        table-layout:fixed;
+    }
+        table.datatable thead tr th {
+            background-color:#dddddd;
+            border-right:1px solid #ffffff;
+            border-bottom:1px solid #ffffff;
+            padding:15px;
+            font-weight:normal;
+        }
+            table.datatable thead tr th:last-child {
+                border-right:0px;
+            }
+            table.datatable thead tr th span.time-compare {
+                font-size:12px;
+            }
+        table.datatable tbody td {
+            border-right:1px solid #dddddd;
+            border-bottom:1px solid #dddddd;
+            padding:10px;
+        }
+            table.datatable tbody td b{
+                font-weight:normal;
+            }
+                table.datatable tbody td b.red {
+                    color:#549e39;
+                }
+                table.datatable tbody td b.green {
+                    color:#ff7777;
+                }
+        table.datatable tbody tr td:nth-child(2), 
+        table.datatable tbody tr td:nth-child(3), 
+        table.datatable tbody tr td:nth-child(5),
+        table.datatable tbody tr td:nth-child(6){
+            border-right:0px;
+        }
+        /****************************按钮样式统一*********************************************************/
+a.normal-btn {
+    text-decoration:none;
+    padding:8px 20px;
+    border:1px solid;
+    display:inline-block;
+}
+a.huge-btn {
+    text-decoration:none;
+    padding:15px 30px;
+    border:1px solid;
+    display:inline-block;
+}
+a.medium-btn {
+    text-decoration:none;
+    padding:10px 15px;
+    border:1px solid;
+    display:inline-block;
+    font-size:15px;
+}
+a.left-icon {
+    padding-left:40px;
+    position:relative;
+}
+    a.medium-btn.left-icon span.icon-sprite {
+        position:absolute;
+        left:5px;
+        bottom:3px;
+    }
+a.deepgreen-btn {
+    border-color:#549e39;
+    background-color:#549e39;
+    color:white;
+}
+a.deepgray-btn {
+    border-color:#e5e5e5;
+    background-color:#e5e5e5;
+    color:#3d5273;
+}
+a.white-btn {
+    border-color:#bbbbbb;
+    background-color:#ffffff;
+    color:#3d5273;
+}
+a.whitegreen-btn {
+    border-color:#8ab833;
+    background-color:#ffffff;
+    color:#8ab833;
+}
+a.nocolor-btn {
+    border-color:transparent;
+    background-color:transparent;
+    color:#333333;
+}
+
+input[type=text].normal-ipt {
+    outline:none;
+    border:1px solid #bbbbbb;
+    font-size:15px;
+    font-family:'Microsoft YaHei';
+    padding: 10px 35px 10px 15px;
+    width:150px;
+}
+ /****************************没有数据显示*********************************************************/
+div.echarts-nodata-wrapper {
+    position:relative;
+    width:100%;
+}
+    div.echarts-nodata-wrapper img {
+        width:100%;
+    }
+    div.echarts-nodata-wrapper h5 {
+        position:absolute;
+        width:100%;
+        text-align:center;
+        top:290px;
+        font-size:16px;
+        color:#999999;
+    }
+
+
+    /*面包屑菜单导航*******************************************/
+div.breadcrumb {
+    margin:5px 0px 20px 0px;
+    padding-left:25px;
+    position:relative;
+    font-size:16px;
+    color:#3d5273;
+}
+    div.breadcrumb span  {
+        margin-right:10px;
+        color:#3d5273;
+    }
+    div.breadcrumb span a {
+        margin-right:10px;
+        color:#3d5273;
+    }
+        div.breadcrumb span a:hover {
+            text-decoration:underline;
+        }
+        div.breadcrumb span.icon-sprite {
+            position: absolute;
+            left: 0px;
+            top: -3px;
+        }
+    /*面包屑菜单导航*******************************************/
+
+    /****************************************************************************/
+div.tab-widget-wrapper {
+    margin:20px 0px;
+    border:1px solid #dddddd;
+}
+    div.tab-widget-wrapper ul {
+        font-size:0px;
+        border-top:3px solid;
+        background-color:#efefef;
+    }
+    div.tab-widget-wrapper ul>li {
+        display:inline-block;
+        width:25%;
+        cursor:pointer;
+    }
+    div.tab-widget-wrapper ul>li a{
+        display:block;
+        padding:18px 0px;
+        font-size:16px;
+        text-decoration:none;
+        text-align:center;
+        color:#999999;
+        border-bottom:1px solid #dddddd;
+        position:relative;
+    }
+        div.tab-widget-wrapper ul > li a span.icon-sprite {
+            position:absolute;
+            left:20px;
+            bottom:13px;
+        }
+        div.tab-widget-wrapper ul > li a.active {
+            background-color:#ffffff;
+            border-left:1px solid #dddddd;
+            border-right:1px solid #dddddd;
+            border-bottom: 1px solid #ffffff;
+        }
+    div.tab-widget-wrapper div.tab-widget-content {
+        background-color:#ffffff;
+        padding:20px 20px 50px 20px;
+        position:relative;
+    }
+        div.tab-widget-wrapper div.tab-widget-content div.tab-item-content {
+            font-size:0px;
+        }
+            div.tab-widget-wrapper div.tab-widget-content div.tab-item-content div.switch-table-bar {
+                text-align:center;
+                font-size:16px;
+                padding:15px 0px;
+                position:absolute;
+                width:100%;
+                left:0px;
+                bottom:0px;
+            }
+                div.tab-widget-wrapper div.tab-widget-content div.tab-item-content div.switch-table-bar:hover {
+                    background-color:#e5e5e5;
+                }
+
+        div.tab-widget-wrapper div.tab-widget-content div.tab-item-content div.information{
+            font-size:16px;
+            padding:0px 30px;
+        }
+            div.tab-widget-wrapper div.tab-widget-content div.tab-item-content div.information h2 {
+                padding:20px 0px 20px 40px;
+                position:relative;
+                font-weight:bolder;
+                font-size:16px;
+            }
+                div.tab-widget-wrapper div.tab-widget-content div.tab-item-content div.information h2 span.icon-sprite {
+                    position:absolute;
+                    left:0px;
+                    top:16px;
+                }
+            div.tab-widget-wrapper div.tab-widget-content div.tab-item-content div.information p {
+                font-size:14px;
+                line-height:1.5em;
+                margin-bottom:20px;
+            }
+                div.tab-widget-wrapper div.tab-widget-content div.tab-item-content div.information p a {
+                    display:block;
+                }
+                div.tab-widget-wrapper div.tab-widget-content div.tab-item-content div.information p b {
+                    font-weight:normal;
+                    color:#6699cc;
+                }
+            div.tab-widget-wrapper div.tab-widget-content div.tab-item-content div.information a.normal-btn {
+                margin-top:20px;
+            }
+              /****************************************************************************/
+
+
+/*就是那种栏栏风格的表格啦*/
+table.column-table {
+    background-color:#ffffff;
+    border-top:1px solid #dddddd;
+    border-left:1px solid #dddddd;
+    border-right:1px solid #dddddd;
+    width:100%;
+    text-align:left;
+}
+    table.column-table .border-right {
+        border-right:1px solid #dddddd;
+    }
+    table.column-table th {
+        border-bottom:1px solid #dddddd;
+        font-size:15px;
+        padding:12px 0px 12px 20px;
+        color:#3d5273;
+    }
+    table.column-table td {
+        border-bottom:1px solid #dddddd;
+        font-size:14px;
+        padding:14px 0px 14px 20px;
+        color:#999999;
+    }
+        table.column-table td a.option {
+            color:#999999;
+            display:inline-block;
+            padding-left:35px;
+            position:relative;
+            text-decoration:none;
+        }
+            table.column-table td a.option span.icon-sprite {
+                position:absolute;
+                top:-7px;
+                left:7px;
+            }
+/*就是那种栏栏风格的表格啦*/
+
+/*自定义进度条样式*/
+div.progress-wrapper {
+    border:1px solid #8ab833;
+    width:80%;
+    height:20px;
+    position:relative;
+    display:inline-block;
+    margin-right:10px;
+}
+div.progress-wrapper div.progress{
+    background-color:#8ab833;
+    height:20px;
+    position:absolute;
+}
+/*自定义进度条样式*/
+
+/*调查详细样式*/
+div.research-detail {
+    background-color:#fff;
+    padding:20px 45px;
+    
+}
+    div.research-detail h2 {
+        font-size:20px;
+        padding:0px 0px 20px 0px;
+        text-align:center;
+        border-bottom:1px solid #dddddd;
+    }
+    div.research-detail h5 {
+        padding:20px 0px 15px 35px;
+        position:relative;
+
+    }
+    div.research-detail h5 span.icon-sprite{
+        position:absolute;
+        left:0px;
+        top:16px;
+    }
+    div.research-detail h5 span.float-right{
+        color:#999999;
+    }
+    div.research-detail div.table-wrapper {
+        margin-left:35px;
+    }
+    div.research-detail div.table-wrapper table.column-table{
+        border:0px;
+        border-left:1px solid #dddddd;
+        border-top:1px solid #dddddd;
+    }
+        div.research-detail div.table-wrapper table.column-table th,
+        div.research-detail div.table-wrapper table.column-table td {
+            border: 0px;
+            border-right: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+        }
+div.bottom-btn-group {
+    margin:30px 0px;
+}
+/*调查详细样式*/
+
+/*控制分页样式*/
+div.page {
+    position:absolute;
+    right:0px;
+    bottom:20px;
+    font-size:0px;
+    margin-top:20px;
+}
+div.page *{
+    display:inline-block;
+}
+
+    div.page > div > span.rows {
+        font-size:15px;
+        color:#3d5273;
+        margin-right:25px;
+    }
+
+    div.page > div > span.current {
+        font-size:15px;
+        color:#ffffff;
+        padding:5px 0px;
+        width:30px;
+        text-align:center;
+        background-color:#8ab833;
+    }
+
+    div.page > div > a.num {
+        font-size:15px;
+        color:#3d5273;
+        font-size:15px;
+        padding:5px 0px;
+        width:30px;
+        text-align:center;
+        /*background-color:#8ab833;*/
+    }
+    /*本身不显示字号0，用after替换，替身大法*/
+    div.page > div > a.next {
+        text-decoration:none;
+    }
+    div.page > div > a.next:after {
+        content:"替";
+        font-size:15px;
+        color:transparent;
+        padding:5px 0px;
+        width:30px;
+        text-align:center;
+        background-color:transparent;
+        background-image:url('../../images/new_version/bg_icon.png');
+        background-position:-390px -120px;
+        width:30px;
+
+        display:inline-block;
+        text-decoration:none;
+        margin:0px 0px 0px 15px;
+    }
+    div.page > div > a.next:hover:after{
+    	background-position:-390px -150px;
+    }
+    div.page > div > a.next.disabled:after {
+    	background-position:-390px -180px;
+    }
+    div.page > div > a.previous {
+        text-decoration:none;
+    }
+    div.page > div > a.previous:after {
+        content:"替";
+        font-size:15px;
+        color:transparent;
+        padding:5px 0px;
+        width:30px;
+        text-align:center;
+        background-color:transparent;
+        background-image:url('../../images/new_version/bg_icon.png');
+        background-position:-360px -150px;
+        width:30px;
+
+        display:inline-block;
+        text-decoration:none;
+        margin:0px 15px 0px 0px;
+    }
+    div.page > div > a.previous:hover:after{
+    	background-position:-360px -180px;
+    }
+    div.page > div > a.previous.disabled:after{
+    	background-position:-360px -120px;
+    }
+    div.page > div > a.home-page {
+        text-decoration:none;
+    }
+    div.page > div > a.home-page:after {
+        content:"替";
+        font-size:15px;
+        color:transparent;
+        padding:5px 0px;
+        width:50px;
+        text-align:center;
+        background-color:transparent;
+        background-image:url('../../images/new_version/bg_icon.png');
+        background-position:-510px -120px;
+        width:50px;
+
+        display:inline-block;
+        text-decoration:none;
+        margin:0px 15px;
+    }
+    div.page > div > a.home-page:hover:after{
+    	background-position:-510px -150px;
+    }
+    div.page > div > a.end-page {
+        text-decoration:none;
+    }
+    div.page > div > a.end-page:after {
+        content:"替";
+        font-size:15px;
+        color:transparent;
+        padding:5px 0px;
+        width:50px;
+        text-align:center;
+        background-color:transparent;
+        background-image:url('../../images/new_version/bg_icon.png');
+        background-position:-510px -180px;
+        width:50px;
+
+        display:inline-block;
+        text-decoration:none;
+        margin:0px 15px;
+    }
+    div.page > div > a.end-page:hover:after{
+    	background-position:-510px -210px;
+    }
+    div.page > div >div.input-copyist{
+    	background-color:#fff;
+    	border:1px solid #8ab833;
+    	padding:4px 0px;
+    }
+    div.page > div >div.input-copyist input[type=text]{
+    	outline:none;
+    	border:0px;
+    	background-color:transparent;
+    	width:30px;
+    	text-align:center;
+    	padding:0px;
+    	margin:0px;
+    	font-size: 15px;
+    	font-family:'Microsoft Yahei';
+    }
+/*控制分页样式*/
+
+/*空白操作栏样式*/
+div.blank-wrapper {
+    padding:20px;
+    background-color:#ffffff;
+    border:1px solid #dddddd;
+    margin-bottom:20px;
+}
+div.blank-wrapper.operation-bar {
+    
+}
+   
+            div.blank-wrapper.operation-bar  dl {
+                margin-bottom:13px;
+                font-size:0px;
+            }
+            div.blank-wrapper.operation-bar  dl:last-child {
+                margin-bottom:0px;
+            }
+            div.blank-wrapper.operation-bar  dl dt{
+                display:inline-block;
+                margin-right:15px;
+                font-size:15px;
+                color:#3d5273;
+            }
+            div.blank-wrapper.operation-bar  dl dd{
+                display:inline-block;
+                font-size:15px;
+            }
+                div.blank-wrapper.operation-bar dl dd div.mydropdown-wrapper {
+                    min-width:150px;
+                    margin-left:10px;
+                }
+            div.blank-wrapper.operation-bar  dl dd a{
+                display:block;
+                font-size:15px;
+            }
+/*空白操作栏样式*/
+
+/*日历原有样式增加*/
+div#ContainerPanel > div#calendarPanel table#calendarTable td{
+    padding:5px 0px;
+}
+div#ContainerPanel > div#calendarPanel table.dataArea{
+    margin:5px 0px;
+}
+/*日历原有样式增加*/
+
+/*呵呵大家都喜欢的遮罩层*/
+div.mask-wrapper {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    /*可能要计算*/
+    height:100%;
+    display:none;
+    /*overflow-y:scroll;*/
+}
+div.mask-wrapper div.mask{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+    background-color:#000;
+}
+div.mask-wrapper div.close{
+    position:fixed;
+    right:40px;
+    top:20px;
+
+    display:none;
+}
+div.mask-wrapper div.option-bar{
+    position:fixed;
+    right: 40px;
+    top: 70px;
+
+    display:none;
+}
+div.mask-wrapper div.content{
+    position:absolute;
+    top:70px;
+    /*要计算*/
+    right:70px;
+}
+div.mask-wrapper div.content div.iframe-content{
+    
+}
+div.mask-wrapper div.content div.iframe-content div.normal-popup{
+    width: 300px;
+    min-height: 200px;
+    background-color: #fff;
+    padding: 15px;
+}
+div.mask-wrapper div.content div.iframe-content div.normal-popup h2{
+    color:#3d5273;
+    padding-bottom:15px;
+    border-bottom:1px solid #8ab833;
+    position:relative;
+}
+div.mask-wrapper div.content div.iframe-content div.normal-popup h2>span.icon-sprite{
+    position:absolute;
+    right:0px;
+    top:-5px;
+}
+div.normal-popup-alert {
+    text-align:center;
+    margin-top:35px;
+}
+div.normal-popup-alert p{
+    margin:20px 0px;
+}
+div.normal-popup-alert a.alert-cancel{
+    margin-left:20px;
+}
+div.normal-popup-alert input[type=text].prompt-textbox{
+    padding:8px 12px;
+    font-family:'Microsoft YaHei';
+    font-size:15px;
+    border:1px solid #dddddd;
+    display:block;
+    margin:35px auto;
+    width:80%;
+}
+div.mask-wrapper div.content div.iframe-content div.normal-popup div.one-line {
+    margin-top:15px;
+}
+/*呵呵大家都喜欢的遮罩层*/
+
+
+/*按钮在里面的搜索框*/
+div.search-box {
+    position:relative;
+    border: 1px solid #bbbbbb;
+    background-color:white;
+}
+    div.search-box>input[type=text] {
+        outline:none;
+        border:0px;
+        font-size:15px;
+        font-family:'Microsoft YaHei';
+        padding: 10px 35px 10px 15px;
+        width:150px;
+    }
+    div.search-box > a.search-button {
+        position:absolute;
+        right:0px;
+        top:5px;
+        cursor:pointer;
+    }
+    div.search-box > a.search-button >span.icon-sprite{
+        
+    }
+/*按钮在里面的搜索框*/
+
+/*气泡对话框样式*/
+div.tips-information-wrapper {
+    border:1px solid #dddddd;
+    display:inline-block;
+    position:absolute;
+    font-size:0px;
+    width:230px;
+    z-index:10;
+
+    display:none;
+}
+div.tips-information-wrapper div.tips-information-content{
+    background-color:#fff;
+    color:#333333;
+    font-size:15px;
+    padding:10px;
+}
+div.tips-information-wrapper span.arrow-wrapper{
+    position:absolute;
+    border-width:15px;
+    border-style:solid;
+    border-color:transparent transparent #dddddd transparent;
+    left:115px;
+    top:-30px;
+}
+div.tips-information-wrapper span.arrow
+{
+    position:absolute;
+    border-width:15px;
+    border-style:solid;
+    border-color:transparent transparent #fff transparent;
+    left:115px;
+    top:-29px;
+}
+/*气泡对话框样式*/
+/*操作结果提示信息*/
+.result-message {
+    font-size:15px;
+    color:#ff7777;
+    margin-left:20px;
+
+    display:none;
+}
+/*操作结果提示信息*/

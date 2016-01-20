@@ -1,0 +1,21 @@
+﻿CACHE MANIFEST
+# 2012-02-21 v1.0.0 修改这个文件触发更新事件
+# 缓存清单
+css/reset.css
+css/animate.css
+css/wechat_commonPlugin.css
+js/jquery-1.9.0.min.js
+js/wechat_commonPlugin.js
+js/operate_cookie.js
+js/IndexedDB.js
+
+css/sideToolbar.css
+js/sideToolbar.js
+
+NETWORK:
+# 不缓存清单
+test_wechat_JsLibrary.html
+
+FALLBACK:
+# 失败返回页面
+sideToorbar.html

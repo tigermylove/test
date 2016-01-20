@@ -1,0 +1,43 @@
+﻿/*bg-代表背景某色，c-代表内容某色，bdborder单独分离出颜色类方便管理网站色调模板*/
+.bg-efefefdeepGray {
+    background-color:#efefef !important;
+}
+.c-549e39darkGreen {
+    color:#549e39 !important;
+}
+.bg-549e39darkGreen {
+    background-color:#549e39 !important;
+}
+.bd-549e39darkGreen {
+    border-color:#549e39 !important;
+}
+.c-ffffffpureWhite {
+    color:#ffffff !important;
+}
+.bg-ffffffpureWhite {
+    background-color:#ffffff !important;
+}
+.bg-ff7777cuteRed {
+    background-color:#ff7777 !important;
+}
+.bg-2dc3e8skyBlue {
+    background-color:#2dc3e8 !important;
+}
+.bg-ffce55orangeOrange {
+    background-color:#ffce55 !important;
+}
+.bd-8ab833themeGreen {
+    border-color:#8ab833 !important;
+}
+.c-8ab833themeGreen {
+    color:#8ab833 !important;
+}
+.c-3d5273fontBlue {
+    color:#3d5273 !important;
+}
+.bd-3d5273fontBlue {
+    border-color:#3d5273 !important;
+}
+.bg-f4f4f4pageGray {
+    background-color:#f4f4f4;
+}

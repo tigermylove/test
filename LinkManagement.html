@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>环节管理</title>
+    <style>
+        .float-right {
+            float:right;
+        }
+
+        div.mask-wrapper {
+            width:100%;
+            height:100%;
+            position:fixed;
+            top:0px;
+            left:0px;
+
+            display:none;
+            /*body overflow hidden*/
+        }
+        div.mask-wrapper div.mask {
+            filter:alpha(opacity=60);
+            opacity:0.6;
+            background-color:black;
+            width:100%;
+            height:100%;
+        }
+            div.mask-wrapper div.dialog {
+                background-color:white;
+                min-width:450px;
+                min-height:250px;
+                display:inline-block;
+                position:fixed;
+                top:150px;
+                left:450px;
+            }
+    </style>
+    <style>
+        span.right-operation-wrapper {
+            width:200px;
+        }
+            span.right-operation-wrapper span.switch-link {
+                width:20%;
+            }
+            span.right-operation-wrapper span.operation {
+                width:80%;
+                text-align:center;
+            }
+                span.right-operation-wrapper span.operation span.edit-link {
+                    width:50%;
+                }
+                span.right-operation-wrapper span.operation span.add-child {
+                    width:50%;
+                }
+    </style>
+</head>
+<body>
+    <div class="link-management wrapper">
+        <h1 data-itemid="1" data-itemname="指标名称" data-itemison="false">
+            <span class="item-name">指标名称</span>
+            <span class="float-right right-operation-wrapper">
+                <span class="switch-link">启用</span>
+                <span class="operation">操作
+                    <span class="edit-link"></span>
+                    <span class="add-child"></span>
+                </span>
+            </span>
+        </h1>
+        <ul id="list-wrapper">
+            <li>
+                <h2 data-itemid="2" data-itemname="评价项目" data-itemison="false">
+                    <span class="item-name">评价项目</span>
+                    <span class="float-right right-operation-wrapper">
+                        <span class="switch-link"><input type="checkbox" /></span>
+                        <span class="operation">
+                            <span class="edit-link">编辑</span>
+                            <span class="add-child">子项目</span>
+                        </span>
+                    </span>
+                </h2>
+                <ul>
+                    <li>
+                        <h3 data-itemid="3" data-itemname="门诊" data-itemison="false">
+                            <span class="item-name">门诊</span>
+                            <span class="float-right right-operation-wrapper">
+                                <span class="switch-link"><input type="checkbox" /></span>
+                                <span class="operation">
+                                    <span class="edit-link">编辑</span>
+                                    <span class="add-child">子项目</span>
+                                </span>
+                            </span>
+                        </h3> 
+                        <ul>
+                            <li>
+                                <h4 data-itemid="4" data-itemname="诊疗过程和沟通" data-itemison="false">
+                                    <span class="item-name">诊疗过程和沟通</span>
+                                    <span class="float-right right-operation-wrapper">
+                                        <span class="switch-link"><input type="checkbox" /></span>
+                                        <span class="operation">
+                                            <span class="edit-link">编辑</span>
+                                            <span class="add-child">子项目</span>
+                                        </span>
+                                    </span>
+                                </h4>
+                                <ul>
+                                    <li>
+                                        <h5 data-itemid="5" data-itemname="倾听病情陈述" data-itemison="false">
+                                            <span class="item-name">倾听病情陈述</span>
+                                            <span class="float-right right-operation-wrapper">
+                                                <span class="switch-link"><input type="checkbox" /></span>
+                                                <span class="operation">
+                                                    <span class="edit-link">编辑</span>
+                                                    <span class="add-child"></span>
+                                                </span>
+                                            </span>
+                                        </h5>
+                                    </li>
+                                    <li>
+                                        <h5 data-itemid="6" data-itemname="保护患者隐私" data-itemison="false">
+                                            <span class="item-name">保护患者隐私</span>
+                                            <span class="float-right right-operation-wrapper">
+                                                <span class="switch-link"><input type="checkbox" /></span>
+                                                <span class="operation">
+                                                    <span class="edit-link">编辑</span>
+                                                    <span class="add-child"></span>
+                                                </span>
+                                            </span>
+                                        </h5>
+                                    </li>
+                                    <li>
+                                        <h5 data-itemid="7" data-itemname="耐心说明病情" data-itemison="false">
+                                            <span class="item-name">耐心说明病情</span>
+                                            <span class="float-right right-operation-wrapper">
+                                                <span class="switch-link"><input type="checkbox" /></span>
+                                                <span class="operation">
+                                                    <span class="edit-link">编辑</span>
+                                                    <span class="add-child"></span>
+                                                </span>
+                                            </span>
+                                        </h5>
+                                    </li>
+                                    <li>
+                                        <h5 data-itemid="8" data-itemname="告知医技检查事项" data-itemison="false">
+                                            <span class="item-name">告知医技检查事项</span>
+                                            <span class="float-right right-operation-wrapper">
+                                                <span class="switch-link"><input type="checkbox" /></span>
+                                                <span class="operation">
+                                                    <span class="edit-link">编辑</span>
+                                                    <span class="add-child"></span>
+                                                </span>
+                                            </span>
+                                        </h5>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3 data-itemid="9" data-itemname="住院" data-itemison="false">
+                            <span class="item-name">住院</span>
+                            <span class="float-right right-operation-wrapper">
+                                <span class="switch-link"><input type="checkbox" /></span>
+                                <span class="operation">
+                                    <span class="edit-link">编辑</span>
+                                    <span class="add-child">子项目</span>
+                                </span>
+                            </span>
+                        </h3>
+                        <ul>
+
+                        </ul> 
+                    </li>
+                    <li>
+                        <h3 data-itemid="10" data-itemname="自定义项目名称" data-itemison="false">
+                            <span class="item-name">自定义项目名称</span>
+                            <span class="float-right right-operation-wrapper">
+                                <span class="switch-link"><input type="checkbox" /></span>
+                                <span class="operation">
+                                    <span class="edit-link">编辑</span>
+                                    <span class="add-child">子项目</span>
+                                </span>
+                            </span>
+                        </h3>
+                        <ul>
+
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="mask-wrapper" id="edit-item">
+        <div class="mask"></div>
+        <div class="dialog">
+            <header>修改项目</header>
+            <section class="content">
+                <select>
+                    <option>所有目录从后台传</option>
+                </select>
+                <input type="text" />
+            </section>
+            <footer>
+                <input type="button" value="确认" id="confirm-editItem"/>
+                <input type="button" value="取消" id="cancel-editItem"/>
+            </footer>
+        </div>
+    </div>
+    <div class="mask-wrapper" id="add-child">
+        <div class="mask"></div>
+        <div class="dialog">
+            <header>添加项目</header>
+            <section class="content">
+                <select>
+                    <option>所有目录从后台传</option>
+                </select>
+                <input type="text" />
+            </section>
+            <footer>
+                <input type="button" value="确认" id="confirm-addChild"/>
+                <input type="button" value="取消" id="cancel-addChild"/>
+            </footer>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.9.0.min.js"></script>
+<script>
+    $(function () {
+        initLinkManagement();
+    });
+    //页面启动，只在页面加载完执行一次
+    function initLinkManagement() {
+        $("#list-wrapper").on("click", "span.edit-link", function () {
+            //alert($(this).parents(":header").html());
+            //初始化遮罩dialog
+            initializeEditItemDialog($(this).parents(":header"));
+            $("#edit-item").fadeIn();
+        });
+        $("#list-wrapper").on("click", "span.add-child", function () {
+            //alert($(this).parents(":header").html());
+            //初始化遮罩dialog
+            initializeAddItemDialog($(this).parents(":header"));
+            $("#add-child").fadeIn();
+        });
+        $("#cancel-editItem").on("click", function () {
+            $("#edit-item").fadeOut();
+        });
+        $("#cancel-addChild").on("click", function () {
+            $("#add-child").fadeOut();
+        });
+        $("#list-wrapper").on("dblclick", ":header span.item-name", function () {
+            //alert($(this).parents(":header").attr("data-itemname"));
+            $(this).html('<input type="text" value="' + $(this).parents(":header").attr("data-itemname") + '" onchange="javascript:dbclickChangeItemName(' + $(this).parents(":header").attr("data-itemid") + ',this.value);"/>');
+        });
+        $("#list-wrapper").on("click", "span.switch-link input[type=checkbox]", function () {
+            //alert($(this).prop("checked"));
+            if ($(this).prop("checked")) {
+                $(this).parents(":header").attr({ "data-itemison": "true" });
+            }
+            else {
+                $(this).parents(":header").attr({ "data-itemison": "false" });
+            }
+            //异步提交，参数是$(this).parents(":header").attr("data-itemid")和$(this).parents(":header").attr("data-itemison")，post？get？
+        });
+
+    }
+    function dbclickChangeItemName(id, name) {
+        alert(id + ":" + name);
+        $(":header[data-itemid=" + id + "]").attr({ "data-itemname": name });
+        $(":header[data-itemid=" + id + "] span.item-name").html(name);
+        //异步提交，参数是id和name，post？get？
+    }
+    //每次开启遮罩层时调用
+    function initializeAddItemDialog(hObj) {
+        $("#add-child input[type=text]").val("");
+        $("#confirm-addChild").off("click");
+        $("#confirm-addChild").on("click", function () {
+            //层级目录如何改？刷新？
+            var parentId = hObj.attr("data-itemid");
+            var newItemName = $(this).parents("footer").siblings("section.content").find("input[type=text]").val();
+            //提交到后台，参数parentId newItemName 返回新项目id？
+            var html = "";
+            //层级规则，hObj最高就是h2，因此新增的[h3,h5]，h3h4都有 h5没有子项目没有跟随的ul
+            //alert(hObj.get(0).tagName);
+            var hlevel = hObj.get(0).tagName;
+            hlevel = parseInt(hlevel.substring(1))+1;
+            //alert(hlevel);
+            html += '<li>\
+                        <h'+hlevel+' data-itemid="3" data-itemname="'+newItemName+'" data-itemison="false">\
+                            <span class="item-name">'+newItemName+'</span>\
+                            <span class="float-right right-operation-wrapper">\
+                                <span class="switch-link"><input type="checkbox" /></span>\
+                                <span class="operation">\
+                                    <span class="edit-link">编辑</span>\
+                                    <span class="add-child">'; if (hlevel < 5) html += '子项目';html+='</span>\
+                                </span>\
+                            </span>\
+                        </h'+hlevel+'>';
+            if(hlevel<5)
+                 html+='<ul>\
+                        </ul>';
+               html+='</li>';
+            hObj.siblings("ul").append(html);
+            $("#add-child").fadeOut();
+        });
+    }
+    function initializeEditItemDialog(hObj) {
+        $("#edit-item input[type=text]").val(hObj.attr("data-itemname"));
+        $("#confirm-editItem").off();
+        $("#confirm-editItem").on("click", function () {
+            var itemid = hObj.attr("data-itemid");
+            var newItemName = $(this).parents("footer").siblings("section.content").find("input[type=text]").val();
+
+            $(":header[data-itemid=" + itemid + "]").attr({ "data-itemname": newItemName });
+            $(":header[data-itemid=" + itemid + "] span.item-name").html(newItemName);
+            //异步提交，参数是id和name，post？get？
+
+            $("#edit-item").fadeOut();
+        });
+    }
+</script>
+</html>

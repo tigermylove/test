@@ -1,0 +1,31 @@
+miss
+
+588,5217,100103218,100101338,200006540,200006584,200006585,200006638
+
+
+buglist
+
+scroll area cant be refreshed
+
+the doctor detail may have two or more because one doctorId may reflect multi department
+
+
+how to destroy pages
+you should set a time to run this like since 28th every 5h a time
+defficult to find it out 
+
+those should place in different place make it hard to find out
+ 
+1.insert tag outside every 'a' tag and 'div' tag,destroy dom structure
+
+2.request some hard to request resource
+
+3.replace jquery 'on' function
+
+4.update the require config
+
+5.define all situation variety name like 'app','Handlebars','$'
+
+6.use @media to create some interesting view at some devices,use js to write it,so its hard to find out where it was defined
+
+7.white some circle like while(1)

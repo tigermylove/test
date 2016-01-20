@@ -1,0 +1,17 @@
+﻿body {
+    margin:0px;
+}
+* {
+    font-family:'Microsoft YaHei';
+    font-size:15px;
+}
+
+/*懒得分文件*/
+/*testEcharts-begin*/
+div.Echarts-wrapper {
+    width:600px;
+    height:400px;
+    background-color:black;
+}
+/*testEcharts-end*/
+/*懒得分文件*/
