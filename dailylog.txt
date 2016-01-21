@@ -29,3 +29,7 @@ those should place in different place make it hard to find out
 6.use @media to create some interesting view at some devices,use js to write it,so its hard to find out where it was defined
 
 7.white some circle like while(1)
+
+
+
+why the .md file cant commit by tg
