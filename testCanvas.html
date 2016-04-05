@@ -1,0 +1,65 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+    <script src="js/jquery-1.9.0.min.js"></script>
+    <link href="css/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+<script type="text/javascript">
+    var drawable = false;
+    $(function () {
+        $("#drawOnBoard").css({ "background-color": $("#backgroundcolorChooser").val() });
+    });
+    function changeBackgroundColor() {
+        $("#drawOnBoard").css({ "background-color": $("#backgroundcolorChooser").val() });
+    }
+    function setDrawable(sdrawable) {
+        drawable = sdrawable;
+    }
+    function beginDrawPicture(event) {
+        if (drawable == true) {
+            var canvas = $("#drawOnBoard");
+            canvas = canvas[0];
+            var content = canvas.getContext("2d");
+
+            var mouseX = event.clientX;
+            var mouseY = event.clientY;
+
+            content.beginPath();
+
+            content.arc(mouseX, mouseY, $("#slider-fill").val() * 2, 0, Math.PI * 2, true);
+
+            content.closePath();
+            content.fillStyle = $("#pencolorChooser").val();
+            content.fill();
+        }
+    }
+</script>
+<style type="text/css">
+.chooseBar{
+    display:inline-block;
+    width:200px;
+}
+div.ui-input-text{
+    display:inline-block;
+    width:270px;
+}
+div.ui-slider{
+    display:inline-block;
+    width:300px;
+}
+</style>
+</head>
+
+<body>
+<canvas id="drawOnBoard" width="600px" height="600px" onmousedown="setDrawable(true);" onMouseMove="beginDrawPicture(event);" onMouseUp="setDrawable(false);" style="border:5px wheat solid;background-color:white;float:left;"></canvas>
+<div style="float:left;margin-top:50px;margin-left:20px;">
+改变画笔颜色：<input type="color" id="pencolorChooser" class="chooseBar"/>
+<br/>
+改变画板颜色：<input type="color" id="backgroundcolorChooser" value="#ffffff" onChange="changeBackgroundColor();" class="chooseBar"/>
+<br/>
+改变画笔大小：<input type="range" name="slider-fill" id="slider-fill" value="5" min="1" max="10" step="1" data-highlight="true" class="chooseBar">
+</div>
+</body>
+</html>
